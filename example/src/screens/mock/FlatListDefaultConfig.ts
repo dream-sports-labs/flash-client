@@ -1,4 +1,4 @@
-import { Component } from 'react-native-server-driven-ui'
+import { type Component } from 'react-native-server-driven-ui'
 
 export const flatListDefaultConfig: Component = {
   id: 2,

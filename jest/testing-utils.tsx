@@ -5,9 +5,9 @@ import renderer from 'react-test-renderer'
 import {
   render as RNTLRender,
   renderHook as RNTLRenderHook,
-  RenderHookOptions,
-  RenderHookResult,
-  RenderOptions,
+  type RenderHookOptions,
+  type RenderHookResult,
+  type RenderOptions,
 } from '@testing-library/react-native'
 
 export { renderer }

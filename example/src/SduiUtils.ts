@@ -1,4 +1,4 @@
-import { ISduiOptions } from '../../src/core/interfaces/IsduiOptions'
+import { type ISduiOptions } from '../../src/core/interfaces/IsduiOptions'
 import { SDUI } from 'react-native-server-driven-ui'
 import { sduiMockData } from './mocks/MockData'
 

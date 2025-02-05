@@ -3,7 +3,7 @@ import { View, type ViewProps } from 'react-native'
 
 import { getComponent } from '../../utils/render-utils'
 import { RenderItem } from '../RenderItem'
-import { SduiComponentConfigurableProps } from '../../types/types'
+import { type SduiComponentConfigurableProps } from '../../types/types'
 import { render, screen } from '../../../jest/testing-utils'
 
 // Mock View component with proper typing for props

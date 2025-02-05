@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { ConfigurableProps } from 'src/types/types'
 import { Image, type ImageProps } from 'react-native'
 import { getSDUIProps, getSDUIStyles } from '../../utils/style-utils'
+import { ConfigurableProps } from 'react-native-server-driven-ui'
 
 type SduiImageProps<T> = ImageProps & {
   nativeID: string
