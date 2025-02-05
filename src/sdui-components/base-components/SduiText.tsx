@@ -12,7 +12,7 @@ const filterContent = (value: unknown): string | number | null | undefined => {
     typeof value === 'number' ||
     value === null
   ) {
-    return value
+    return value as string | number | null
   }
   return undefined
 }
