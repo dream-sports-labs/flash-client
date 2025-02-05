@@ -1,4 +1,3 @@
-import React from 'react'
 import { memo } from 'react'
 import { type SduiComponentConfigurableProps } from '../types/types'
 import { getComponent } from '../utils/render-utils'

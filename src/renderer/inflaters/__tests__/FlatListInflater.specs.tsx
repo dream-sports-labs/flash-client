@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { Text } from 'react-native'
 
 import * as renderUtils from '../../../utils/render-utils'

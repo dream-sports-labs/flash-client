@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { SduiView } from '../SduiView'
 import { getSDUIProps, getSDUIStyles } from '../../../utils/style-utils'
 import { render } from '../../../../jest/testing-utils'

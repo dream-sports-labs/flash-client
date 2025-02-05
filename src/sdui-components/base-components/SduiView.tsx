@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { View, type ViewProps, type ViewStyle } from 'react-native'
 import { getSDUIProps, getSDUIStyles } from '../../utils/style-utils'
 import { type ConfigurableProps } from '../../types/types'

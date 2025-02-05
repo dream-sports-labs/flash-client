@@ -3,7 +3,7 @@ import React, { type ReactNode } from 'react'
 import { Text, type TextProps } from 'react-native'
 
 import { getSDUIProps, getSDUIStyles } from '../../utils/style-utils'
-import { ConfigurableProps } from 'react-native-server-driven-ui'
+import { type ConfigurableProps } from 'react-native-server-driven-ui'
 
 // Helper function to filter values that are string, number, null or object and ignore other types
 const filterContent = (value: unknown): string | number | null | undefined => {

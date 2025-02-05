@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { SduiImage } from '../SduiImage'
 import { getSDUIProps, getSDUIStyles } from '../../../utils/style-utils'
 import { Image } from 'react-native'

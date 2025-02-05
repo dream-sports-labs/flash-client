@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { SduiText } from '../SduiText'
 import { getSDUIProps, getSDUIStyles } from '../../../utils/style-utils'
 import { Text } from 'react-native'
