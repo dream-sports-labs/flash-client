@@ -54,7 +54,7 @@
     "type": "git",
     "url": "git+https://github.com/anirudhdream11/react-native-server-driven-ui.git"
   },
-  "author": "anirudh9909 <anirudh.bharti@dream11.com> (https://github.com/anirudhdream11)",
+  "author": "anirudhdream11 <anirudh.bharti@dream11.com> (https://github.com/anirudhdream11)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/anirudhdream11/react-native-server-driven-ui/issues"
@@ -67,20 +67,28 @@
     "@commitlint/config-conventional": "^17.0.2",
     "@evilmartians/lefthook": "^1.5.0",
     "@react-native-community/cli": "15.0.1",
+    "@react-native/babel-preset": "^0.77.0",
     "@react-native/eslint-config": "^0.73.1",
     "@release-it/conventional-changelog": "^9.0.2",
+    "@testing-library/jest-native": "^5.4.3",
+    "@testing-library/react-native": "^13.0.1",
     "@types/jest": "^29.5.5",
     "@types/react": "^18.2.44",
+    "@types/react-test-renderer": "18.3.1",
+    "babel-jest": "^29.7.0",
     "commitlint": "^17.0.2",
     "del-cli": "^5.1.0",
     "eslint": "^8.51.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",
     "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "metro-react-native-babel-preset": "^0.77.0",
     "prettier": "^3.0.3",
     "react": "18.3.1",
     "react-native": "0.77.0",
     "react-native-builder-bob": "^0.32.0",
+    "react-test-renderer": "18.3.1",
     "release-it": "^17.10.0",
     "turbo": "^1.10.7",
     "typescript": "^5.2.2"
@@ -96,13 +104,6 @@
     "example"
   ],
   "packageManager": "yarn@3.6.1",
-  "jest": {
-    "preset": "react-native",
-    "modulePathIgnorePatterns": [
-      "<rootDir>/example/node_modules",
-      "<rootDir>/lib/"
-    ]
-  },
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
@@ -140,7 +141,8 @@
           "singleQuote": true,
           "tabWidth": 2,
           "trailingComma": "es5",
-          "useTabs": false
+          "useTabs": false,
+          "semi": false
         }
       ]
     }

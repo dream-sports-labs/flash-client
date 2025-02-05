@@ -1,10 +1,9 @@
 import React from 'react'
 
-import { render } from '@testing-utils'
-
 import { SduiText } from '../SduiText'
 import { getSDUIProps, getSDUIStyles } from '../../../utils/style-utils'
 import { Text } from 'react-native'
+import { render } from '../../../../jest/testing-utils'
 
 jest.mock('react-native/Libraries/Text/Text', () => jest.fn(() => null))
 jest.mock('../../../utils/style-utils', () => ({

@@ -2,11 +2,10 @@ import React from 'react'
 
 import { Text } from 'react-native'
 
-import { render, waitFor } from '@testing-utils'
-
 import * as renderUtils from '../../../utils/render-utils'
 import { Component, PropData } from '../../../types/types'
 import { FlatListInflater } from '../FlatListInflater'
+import { render, waitFor } from '../../../../jest/testing-utils'
 
 // Mocking getComponent function from render-utils
 jest.mock('../../../utils/render-utils', () => ({

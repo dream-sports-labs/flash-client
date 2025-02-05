@@ -38,7 +38,6 @@ export const SduiText = <T,>(
   },
   ref: React.ForwardedRef<Text>
 ) => {
-  //Todo: Remove rest destructuring from props after MatchStats SDUI Migration
   const { configProps, children, ...rest } = props
   const { styles, overrides, data } = configProps
 

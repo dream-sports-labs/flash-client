@@ -3,8 +3,8 @@ import { View, type ViewProps } from 'react-native'
 
 import { getComponent } from '../../utils/render-utils'
 import { RenderItem } from '../RenderItem'
-import { type SduiComponentConfigurableProps } from 'src'
-import { render, screen } from '@testing-utils'
+import { SduiComponentConfigurableProps } from '../../types/types'
+import { render, screen } from '../../../jest/testing-utils'
 
 // Mock View component with proper typing for props
 const MockView = (props: ViewProps & { testID: string }) => <View {...props} />

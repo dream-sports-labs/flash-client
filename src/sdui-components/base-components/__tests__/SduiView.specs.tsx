@@ -1,9 +1,8 @@
 import React from 'react'
 
-import { render } from '@testing-utils'
-
 import { SduiView } from '../SduiView'
 import { getSDUIProps, getSDUIStyles } from '../../../utils/style-utils'
+import { render } from '../../../../jest/testing-utils'
 
 jest.mock('../../../utils/style-utils', () => ({
   getSDUIProps: jest.fn(),
