@@ -22,11 +22,13 @@ export const RenderItem = memo((props: SduiComponentConfigurableProps) => {
             data={item.data}
             events={item.events}
           >
-            <RenderItem
-              components={
-                item.components as SduiComponentConfigurableProps['components']
-              }
-            />
+            {item.components && item.components.length > 0 && (
+              <RenderItem
+                components={
+                  item.components as SduiComponentConfigurableProps['components']
+                }
+              />
+            )}
           </RenderComponent>
         )
       })}

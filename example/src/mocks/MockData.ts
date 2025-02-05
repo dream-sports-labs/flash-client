@@ -71,7 +71,6 @@ export const sduiMockData: Component[] = [
               matchTime: '7:00 PM',
               venue: 'Eden Gardens, Kolkata',
             },
-
             components: [
               {
                 id: 2,
@@ -165,21 +164,21 @@ export const sduiMockData: Component[] = [
                   },
                 },
                 components: [
-                  // {
-                  //   id: 9,
-                  //   name: 'SduiImage',
-                  //   styles: {
-                  //     style: {
-                  //       width: 60,
-                  //       height: 60,
-                  //       borderRadius: 50,
-                  //       marginRight: 10,
-                  //     },
-                  //   },
-                  //   data: {
-                  //     uri: 'https://reactnative.dev/img/tiny_logo.png',
-                  //   },
-                  // },
+                  {
+                    id: 9,
+                    name: 'SduiImage',
+                    styles: {
+                      style: {
+                        width: 60,
+                        height: 60,
+                        borderRadius: 50,
+                        marginRight: 10,
+                      },
+                    },
+                    data: {
+                      uri: 'https://reactnative.dev/img/tiny_logo.png',
+                    },
+                  },
                   {
                     id: 10,
                     name: 'SduiText',
@@ -208,36 +207,36 @@ export const sduiMockData: Component[] = [
                   },
                 },
                 components: [
-                  // {
-                  //   id: 12,
-                  //   name: 'SduiImage',
-                  //   styles: {
-                  //     style: {
-                  //       backgroundColor: '#007BFF',
-                  //       paddingVertical: 10,
-                  //       paddingHorizontal: 20,
-                  //       borderRadius: 5,
-                  //     },
-                  //   },
-                  //   data: {
-                  //     uri: 'https://reactnative.dev/img/tiny_logo.png',
-                  //   },
-                  // },
-                  // {
-                  //   id: 13,
-                  //   name: 'SduiImage',
-                  //   styles: {
-                  //     style: {
-                  //       backgroundColor: '#6C757D',
-                  //       paddingVertical: 10,
-                  //       paddingHorizontal: 20,
-                  //       borderRadius: 5,
-                  //     },
-                  //   },
-                  //   data: {
-                  //     uri: 'https://reactnative.dev/img/tiny_logo.png',
-                  //   },
-                  // },
+                  {
+                    id: 12,
+                    name: 'SduiImage',
+                    styles: {
+                      style: {
+                        backgroundColor: '#007BFF',
+                        paddingVertical: 10,
+                        paddingHorizontal: 20,
+                        borderRadius: 5,
+                      },
+                    },
+                    data: {
+                      uri: 'https://reactnative.dev/img/tiny_logo.png',
+                    },
+                  },
+                  {
+                    id: 13,
+                    name: 'SduiImage',
+                    styles: {
+                      style: {
+                        backgroundColor: '#6C757D',
+                        paddingVertical: 10,
+                        paddingHorizontal: 20,
+                        borderRadius: 5,
+                      },
+                    },
+                    data: {
+                      uri: 'https://reactnative.dev/img/tiny_logo.png',
+                    },
+                  },
                 ],
               },
             ],
@@ -374,21 +373,21 @@ export const sduiMockData: Component[] = [
                   },
                 },
                 components: [
-                  // {
-                  //   id: 9,
-                  //   name: 'SduiImage',
-                  //   styles: {
-                  //     style: {
-                  //       width: 60,
-                  //       height: 60,
-                  //       borderRadius: 50,
-                  //       marginRight: 10,
-                  //     },
-                  //   },
-                  //   data: {
-                  //     uri: 'https://reactnative.dev/img/tiny_logo.png',
-                  //   },
-                  // },
+                  {
+                    id: 9,
+                    name: 'SduiImage',
+                    styles: {
+                      style: {
+                        width: 60,
+                        height: 60,
+                        borderRadius: 50,
+                        marginRight: 10,
+                      },
+                    },
+                    data: {
+                      uri: 'https://reactnative.dev/img/tiny_logo.png',
+                    },
+                  },
                   {
                     id: 10,
                     name: 'SduiText',
@@ -417,36 +416,36 @@ export const sduiMockData: Component[] = [
                   },
                 },
                 components: [
-                  // {
-                  //   id: 12,
-                  //   name: 'SduiImage',
-                  //   styles: {
-                  //     style: {
-                  //       backgroundColor: '#007BFF',
-                  //       paddingVertical: 10,
-                  //       paddingHorizontal: 20,
-                  //       borderRadius: 5,
-                  //     },
-                  //   },
-                  //   data: {
-                  //     uri: 'https://reactnative.dev/img/tiny_logo.png',
-                  //   },
-                  // },
-                  // {
-                  //   id: 13,
-                  //   name: 'SduiImage',
-                  //   styles: {
-                  //     style: {
-                  //       backgroundColor: '#6C757D',
-                  //       paddingVertical: 10,
-                  //       paddingHorizontal: 20,
-                  //       borderRadius: 5,
-                  //     },
-                  //   },
-                  //   data: {
-                  //     uri: 'https://reactnative.dev/img/tiny_logo.png',
-                  //   },
-                  // },
+                  {
+                    id: 12,
+                    name: 'SduiImage',
+                    styles: {
+                      style: {
+                        backgroundColor: '#007BFF',
+                        paddingVertical: 10,
+                        paddingHorizontal: 20,
+                        borderRadius: 5,
+                      },
+                    },
+                    data: {
+                      uri: 'https://reactnative.dev/img/tiny_logo.png',
+                    },
+                  },
+                  {
+                    id: 13,
+                    name: 'SduiImage',
+                    styles: {
+                      style: {
+                        backgroundColor: '#6C757D',
+                        paddingVertical: 10,
+                        paddingHorizontal: 20,
+                        borderRadius: 5,
+                      },
+                    },
+                    data: {
+                      uri: 'https://reactnative.dev/img/tiny_logo.png',
+                    },
+                  },
                 ],
               },
             ],
@@ -583,21 +582,21 @@ export const sduiMockData: Component[] = [
                   },
                 },
                 components: [
-                  // {
-                  //   id: 9,
-                  //   name: 'SduiImage',
-                  //   styles: {
-                  //     style: {
-                  //       width: 60,
-                  //       height: 60,
-                  //       borderRadius: 50,
-                  //       marginRight: 10,
-                  //     },
-                  //   },
-                  //   data: {
-                  //     uri: 'https://reactnative.dev/img/tiny_logo.png',
-                  //   },
-                  // },
+                  {
+                    id: 9,
+                    name: 'SduiImage',
+                    styles: {
+                      style: {
+                        width: 60,
+                        height: 60,
+                        borderRadius: 50,
+                        marginRight: 10,
+                      },
+                    },
+                    data: {
+                      uri: 'https://reactnative.dev/img/tiny_logo.png',
+                    },
+                  },
                   {
                     id: 10,
                     name: 'SduiText',
@@ -626,36 +625,36 @@ export const sduiMockData: Component[] = [
                   },
                 },
                 components: [
-                  // {
-                  //   id: 12,
-                  //   name: 'SduiImage',
-                  //   styles: {
-                  //     style: {
-                  //       backgroundColor: '#007BFF',
-                  //       paddingVertical: 10,
-                  //       paddingHorizontal: 20,
-                  //       borderRadius: 5,
-                  //     },
-                  //   },
-                  //   data: {
-                  //     uri: 'https://reactnative.dev/img/tiny_logo.png',
-                  //   },
-                  // },
-                  // {
-                  //   id: 13,
-                  //   name: 'SduiImage',
-                  //   styles: {
-                  //     style: {
-                  //       backgroundColor: '#6C757D',
-                  //       paddingVertical: 10,
-                  //       paddingHorizontal: 20,
-                  //       borderRadius: 5,
-                  //     },
-                  //   },
-                  //   data: {
-                  //     uri: 'https://reactnative.dev/img/tiny_logo.png',
-                  //   },
-                  // },
+                  {
+                    id: 12,
+                    name: 'SduiImage',
+                    styles: {
+                      style: {
+                        backgroundColor: '#007BFF',
+                        paddingVertical: 10,
+                        paddingHorizontal: 20,
+                        borderRadius: 5,
+                      },
+                    },
+                    data: {
+                      uri: 'https://reactnative.dev/img/tiny_logo.png',
+                    },
+                  },
+                  {
+                    id: 13,
+                    name: 'SduiImage',
+                    styles: {
+                      style: {
+                        backgroundColor: '#6C757D',
+                        paddingVertical: 10,
+                        paddingHorizontal: 20,
+                        borderRadius: 5,
+                      },
+                    },
+                    data: {
+                      uri: 'https://reactnative.dev/img/tiny_logo.png',
+                    },
+                  },
                 ],
               },
             ],
@@ -792,21 +791,21 @@ export const sduiMockData: Component[] = [
                   },
                 },
                 components: [
-                  // {
-                  //   id: 9,
-                  //   name: 'SduiImage',
-                  //   styles: {
-                  //     style: {
-                  //       width: 60,
-                  //       height: 60,
-                  //       borderRadius: 50,
-                  //       marginRight: 10,
-                  //     },
-                  //   },
-                  //   data: {
-                  //     uri: 'https://reactnative.dev/img/tiny_logo.png',
-                  //   },
-                  // },
+                  {
+                    id: 9,
+                    name: 'SduiImage',
+                    styles: {
+                      style: {
+                        width: 60,
+                        height: 60,
+                        borderRadius: 50,
+                        marginRight: 10,
+                      },
+                    },
+                    data: {
+                      uri: 'https://reactnative.dev/img/tiny_logo.png',
+                    },
+                  },
                   {
                     id: 10,
                     name: 'SduiText',
@@ -835,36 +834,36 @@ export const sduiMockData: Component[] = [
                   },
                 },
                 components: [
-                  // {
-                  //   id: 12,
-                  //   name: 'SduiImage',
-                  //   styles: {
-                  //     style: {
-                  //       backgroundColor: '#007BFF',
-                  //       paddingVertical: 10,
-                  //       paddingHorizontal: 20,
-                  //       borderRadius: 5,
-                  //     },
-                  //   },
-                  //   data: {
-                  //     uri: 'https://reactnative.dev/img/tiny_logo.png',
-                  //   },
-                  // },
-                  // {
-                  //   id: 13,
-                  //   name: 'SduiImage',
-                  //   styles: {
-                  //     style: {
-                  //       backgroundColor: '#6C757D',
-                  //       paddingVertical: 10,
-                  //       paddingHorizontal: 20,
-                  //       borderRadius: 5,
-                  //     },
-                  //   },
-                  //   data: {
-                  //     uri: 'https://reactnative.dev/img/tiny_logo.png',
-                  //   },
-                  // },
+                  {
+                    id: 12,
+                    name: 'SduiImage',
+                    styles: {
+                      style: {
+                        backgroundColor: '#007BFF',
+                        paddingVertical: 10,
+                        paddingHorizontal: 20,
+                        borderRadius: 5,
+                      },
+                    },
+                    data: {
+                      uri: 'https://reactnative.dev/img/tiny_logo.png',
+                    },
+                  },
+                  {
+                    id: 13,
+                    name: 'SduiImage',
+                    styles: {
+                      style: {
+                        backgroundColor: '#6C757D',
+                        paddingVertical: 10,
+                        paddingHorizontal: 20,
+                        borderRadius: 5,
+                      },
+                    },
+                    data: {
+                      uri: 'https://reactnative.dev/img/tiny_logo.png',
+                    },
+                  },
                 ],
               },
             ],

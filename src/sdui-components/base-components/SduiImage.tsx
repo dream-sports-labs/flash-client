@@ -32,10 +32,6 @@ export const SduiImage = <T,>(props: SduiImageProps<T>) => {
   // Retrieve and transform additional props based on nativeID
   const sduiProps = wrappedUriIntoSource(getSDUIProps(rest.nativeID, overrides))
 
-  console.log('sduiProps', sduiProps)
-  console.log('rest', rest)
-  console.log('data', data)
-
   // Transform data to include source instead of uri if necessary
   const dataWithSource =
     typeof data === 'object' && data !== null
