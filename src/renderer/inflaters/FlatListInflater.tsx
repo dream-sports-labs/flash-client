@@ -40,7 +40,6 @@ export const FlatListInflater = React.memo(
             overrides={component.overrides || {}} // Apply overrides if provided
             // @ts-ignore
             data={dataItem || component.data || {}} // Pass the component-specific data or an empty object if no data
-            events={component.events} // Pass the event handlers
             key={`${component.name}-${index || 'default'}`} // Unique key for the component
           />
         )

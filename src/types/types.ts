@@ -7,18 +7,6 @@ import {
 } from 'react-native'
 
 /**
- * Represents the response from the Components API call.
- *
- * - `data`: Contains an array of objects, each representing a set of components.
- *   This structure allows the server to define multiple component sets that can be rendered on the client side.
- */
-export type Response = {
-  readonly data: {
-    readonly components: Array<Component>
-  }
-}
-
-/**
  * Represents a single component in the SDUI (Server-Driven UI) structure.
  *
  * - `id`: A unique identifier for the component, used for distinguishing between different components.
@@ -29,7 +17,6 @@ export type Response = {
  * - `data`: An optional object containing the data required by the component. This can include static text, numeric values, or other data that the component needs to render correctly.
  * - `version`: A string indicating the version of the component. This can be used to manage different versions of components and ensure compatibility between the server and client.
  * - `dataId`: A string representing the data identifier for the component. This can be used to uniquely identify the data associated with the component.
- * - `events`: An optional object that defines the events and their corresponding actions (e.g., `onPress`, `onLongPress`, etc.).
  */
 export type Component = {
   readonly id?: number
@@ -40,7 +27,6 @@ export type Component = {
   readonly data?: PropData
   readonly version?: string
   readonly dataId?: string
-  readonly events?: EventActions
 }
 
 /**
@@ -58,12 +44,10 @@ export type Overrides = {
  *
  * - `props`: An optional object containing props that override the original props of the component.
  * - `styles`: An optional object that defines styles to override the original styles of the component.
- * - `events`: An optional object that defines the event-specific actions for the component.
  */
 export type OverrideStyle = {
   readonly props?: PropData
   readonly styles?: Style
-  readonly events?: EventActions
 }
 
 /**
@@ -78,111 +62,13 @@ export type Style = {
 }
 
 /**
- * Represents a template object within the payload array.
- */
-export type TemplateValue = {
-  isTemplate: boolean
-  variablePath?: string
-  default?: string | number | boolean | object
-  variableType?: 'string' | 'number' | 'boolean' | 'object'
-  value?: string | number | boolean
-}
-
-/**
- * Represents a template data structure that can include templates or literal values.
- */
-export type TemplateDataType = {
-  isTemplateDataType: boolean
-  value: TemplateArray
-}
-
-/**
- * Represents either a standard payload or a template data structure.
- */
-export type PayloadOrTemplateDataType = {
-  [key: string]:
-    | string
-    | number
-    | boolean
-    | object
-    | PayloadOrTemplateDataType
-    | TemplateDataType
-}
-
-/**
- * Represents different payload structures, including objects, templates, or direct primitive values.
- */
-export type PrimitiveOrPayload =
-  | string
-  | number
-  | boolean
-  | object
-  | PayloadOrTemplateDataType
-
-/**
- * Represents an array of template values or other payloads.
- */
-export type TemplateArray = Array<
-  TemplateValue | TemplateDataType | PayloadOrTemplateDataType
->
-
-/**
- * Represents a task to be executed based on user interactions.
- *
- * - `name`: The name of the action, such as 'navigate', 'alert', 'eval', etc.
- * - `payload`: Any data required for executing the action, such as a navigation route or message.
- * - `onSuccess`: Optional actions to be executed when the action succeeds.
- * - `onError`: Optional actions to be executed when the action fails.
- * - `contextParamKeySuccess`: Optional key for passing context parameters when the action succeeds.
- * - `contextParamKeyError`: Optional key for passing context parameters when the action fails.
- */
-export type Action<T = ActionResult> = {
-  name: string
-  payload?: PayloadOrTemplateDataType
-  onSuccess?: Array<Action<T>>
-  onError?: Array<Action<T>>
-  contextParamKeySuccess?: string
-  contextParamKeyError?: string
-}
-
-export type ActionResult =
-  | string
-  | boolean
-  | number
-  | object
-  | Array<string | number | boolean | object | ActionResult>
-
-/**
- * Represents a collection of event-based actions.
- * - Each key is the event name (e.g., `onPress`, `onLongPress`).
- * - Each value is an array of actions to be executed when the event is triggered.
- */
-export type EventActions = {
-  [eventName: string]: EventAction
-}
-
-/**
- * Represents a specific event and its actions.
- *
- * - `actions`: A list of actions to be executed when the event is triggered.
- * - `payload`: Optional payload data associated with the event.
- * - `contextParamKeySuccess`: Optional key for passing context parameters when the event is successful.
- */
-export type EventAction = {
-  actions: Array<Action>
-  payload?: PayloadOrTemplateDataType
-  contextParamKeySuccess?: string
-}
-
-/**
  * Represents configurable properties that can be passed to a component.
  *
  * - `child`: An optional array of child components. This allows for the nesting of components, enabling complex UI structures.
  * - `styles`: An optional object that defines the styling for the component. This allows the component to be visually customized.
  * - `overrides`: An optional object that allows for overriding the styles and props of child components. This is useful for dynamic customization based on server data.
  * - `data`: An optional generic type (`T`) that contains the data required by the component. This could include text, numbers, or other types of data that the component needs to render.
- * - `events`: An optional object that defines the events and their corresponding actions (e.g., `onPress`, `onLongPress`).
- *
+\ *
  * @template T - The type of the data prop. Defaults to `never` if not specified.
  */
 export type ConfigurableProps<T = never> = {
@@ -190,7 +76,6 @@ export type ConfigurableProps<T = never> = {
   readonly styles?: Style
   readonly overrides?: Overrides
   readonly data?: T
-  readonly events?: EventActions
 }
 
 /**
@@ -238,7 +123,6 @@ export type BaseInflaterProps<T extends PropData | never = never> = {
   readonly style?: ViewStyle
   readonly overrides?: Overrides
   readonly data?: T
-  readonly events?: EventActions
 }
 
 /**

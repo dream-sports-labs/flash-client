@@ -19,7 +19,6 @@ export const RenderItem = memo((props: SduiComponentConfigurableProps) => {
             overrides={item.overrides || {}}
             // @ts-ignore
             data={item.data}
-            events={item.events}
           >
             {item.components && item.components.length > 0 && (
               <RenderItem

@@ -50,7 +50,7 @@ describe('RenderItem Component', () => {
     const TestComponent = jest.fn(() => <View testID="test-component" />)
     getComponentMock.mockReturnValue(TestComponent)
 
-    const componentsWithSameId: SduiComponentConfigurableProps = {
+    const componentsWithSameId = {
       components: [
         { id: 1, name: 'Component1', components: [], styles: {}, data: {} },
         { id: 2, name: 'Component2', components: [], styles: {}, data: {} },

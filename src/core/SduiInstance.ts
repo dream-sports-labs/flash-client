@@ -10,11 +10,15 @@ import { SduiLogger } from '../utils/sdui-logger'
 import { componentService } from './ComponentService'
 
 class Sdui implements ISdui {
-  private sduiListeners?: ISduiListeners // Made optional
+  private sduiListeners?: ISduiListeners
   private static instance: Sdui
 
   private constructor() {}
 
+  /**
+   * Retrieves the singleton instance of SDUI.
+   * @returns {Sdui} The SDUI instance.
+   */
   public static getInstance(): Sdui {
     if (!Sdui.instance) {
       Sdui.instance = new Sdui()
@@ -22,6 +26,11 @@ class Sdui implements ISdui {
     return Sdui.instance
   }
 
+  /**
+   * Initializes SDUI with optional event listeners and configuration.
+   * @param sduiListeners - Optional event listeners.
+   * @param sduiOptions - Optional configuration settings.
+   */
   init(sduiListeners?: ISduiListeners, sduiOptions?: ISduiOptions) {
     this.sduiListeners = sduiListeners
 
@@ -32,10 +41,20 @@ class Sdui implements ISdui {
     SduiLogger.log('SDUI initialized.', sduiOptions || {})
   }
 
+  /**
+   * Retrieves the layout for a given component.
+   * @param componentName - The name of the component.
+   * @param defaultComponent - The default component layout.
+   * @returns The component layout.
+   */
   getComponentLayout(componentName: string, defaultComponent: Component) {
     return componentService.getComponentLayout(componentName, defaultComponent)
   }
 
+  /**
+   * Sends a non-fatal error event.
+   * @param error - The error object.
+   */
   sendSDUINonFatalEvent(error: Error) {
     try {
       this.sduiListeners?.sendSDUINonFatalEvent?.(error)
@@ -46,6 +65,10 @@ class Sdui implements ISdui {
     }
   }
 
+  /**
+   * Updates component data within SDUI.
+   * @param components - An array of components to update.
+   */
   setComponentsData(components: Component[]): void {
     try {
       componentService.setComponentsData(components)
@@ -56,6 +79,10 @@ class Sdui implements ISdui {
     }
   }
 
+  /**
+   * Registers new UI components.
+   * @param components - A record of component names and their React component implementations.
+   */
   registerComponent(
     components: Record<string, React.FC<ConfigurableProps>>
   ): void {
@@ -69,4 +96,7 @@ class Sdui implements ISdui {
   }
 }
 
+/**
+ * Exporting the singleton SDUI instance globally.
+ */
 export const sduiInstance = Sdui.getInstance()
