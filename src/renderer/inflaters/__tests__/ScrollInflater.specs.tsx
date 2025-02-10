@@ -1,6 +1,6 @@
 import { Text } from 'react-native'
 
-import { type Component, type PropData } from '../../../types/types'
+import { type PropData } from '../../../types/types'
 import * as renderUtils from '../../../utils/render-utils'
 import { ScrollInflater } from '../ScrollInflater'
 import { render, waitFor } from '../../../../jest/testing-utils'
@@ -18,7 +18,7 @@ const MockComponent = ({ data, name }: { data: PropData; name: string }) => {
 }
 
 describe('ScrollInflater', () => {
-  const mockComponents: Component[] = [
+  const mockComponents = [
     {
       id: 1,
       name: 'TestComponent1',

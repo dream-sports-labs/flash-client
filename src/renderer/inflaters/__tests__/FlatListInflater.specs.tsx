@@ -1,7 +1,7 @@
 import { Text } from 'react-native'
 
 import * as renderUtils from '../../../utils/render-utils'
-import { type Component, type PropData } from '../../../types/types'
+import { type PropData } from '../../../types/types'
 import { FlatListInflater } from '../FlatListInflater'
 import { render, waitFor } from '../../../../jest/testing-utils'
 
@@ -18,7 +18,7 @@ const MockComponent = ({ data, name }: { data: PropData; name: string }) => {
 }
 
 describe('FlatListInflater', () => {
-  const mockComponents: Component[] = [
+  const mockComponents = [
     {
       id: 1,
       name: 'TestComponent1',
