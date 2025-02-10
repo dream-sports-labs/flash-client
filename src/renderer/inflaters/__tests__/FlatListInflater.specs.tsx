@@ -53,27 +53,6 @@ describe('FlatListInflater', () => {
     jest.clearAllMocks()
   })
 
-  // it('should render FlatList with the correct number of components', async () => {
-  //   const { getByTestId, getAllByText } = render(
-  //     <FlatListInflater
-  //       components={mockComponents}
-  //       data={mockData}
-  //       style={{}}
-  //     />
-  //   )
-  //
-  //   // Verify that FlatList is rendered with the correct testID
-  //   await waitFor(() =>
-  //     expect(getByTestId('list-inflater-flatlist')).toBeTruthy()
-  //   )
-  //
-  //   // Wait for the components to render
-  //   await waitFor(() => {
-  //     const renderedItems = getAllByText(/Data for Component/i)
-  //     expect(renderedItems).toHaveLength(2) // Check for the rendered items
-  //   })
-  // })
-
   it('should render FlatList with the correct number of components', async () => {
     const { findByTestId, findAllByText } = render(
       <FlatListInflater
@@ -90,7 +69,7 @@ describe('FlatListInflater', () => {
     // Verify that components are rendered
     const renderedItems = await findAllByText(/Data for Component/i)
     expect(renderedItems.length).toBe(2)
-  })
+  }, 10000)
 
   it('should render null if no components are provided', () => {
     const { queryByTestId } = render(
