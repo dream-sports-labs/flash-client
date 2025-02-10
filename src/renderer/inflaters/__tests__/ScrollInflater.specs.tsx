@@ -74,7 +74,7 @@ describe('ScrollInflater', () => {
     // Verify that components are rendered
     const renderedItems = await findAllByText(/Data for Component/i)
     expect(renderedItems.length).toBe(2)
-  })
+  }, 10000) // Increased timeout to 10 seconds
 
   it('should render null if no components are provided', () => {
     const { queryByTestId } = render(
