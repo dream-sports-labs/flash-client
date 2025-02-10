@@ -84,11 +84,12 @@ describe('FlatListInflater', () => {
     )
 
     // Verify that FlatList is rendered
-    expect(await findByTestId('list-inflater-flatlist')).toBeTruthy()
+    const flatList = await findByTestId('list-inflater-flatlist')
+    expect(flatList).toBeTruthy()
 
-    // Wait for and verify the components
+    // Verify that components are rendered
     const renderedItems = await findAllByText(/Data for Component/i)
-    expect(renderedItems).toHaveLength(2)
+    expect(renderedItems.length).toBe(2)
   })
 
   it('should render null if no components are provided', () => {
