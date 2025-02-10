@@ -46,20 +46,33 @@ describe('ScrollInflater', () => {
     })
   })
 
+  // it('should render ScrollView with the correct number of components', async () => {
+  //   const { getByTestId, getAllByText } = render(
+  //     <ScrollInflater components={mockComponents} data={mockData} style={{}} />
+  //   )
+  //
+  //   // Verify that ScrollView is rendered
+  //   const scrollView = getByTestId('scroll-inflater-scrollview')
+  //   expect(scrollView).toBeTruthy()
+  //
+  //   // Wait for the components to render
+  //   await waitFor(() => {
+  //     const renderedItems = getAllByText(/Data for Component/i)
+  //     expect(renderedItems).toHaveLength(2) // Check for the rendered items
+  //   })
+  // })
+
   it('should render ScrollView with the correct number of components', async () => {
-    const { getByTestId, getAllByText } = render(
+    const { getByTestId, findAllByText } = render(
       <ScrollInflater components={mockComponents} data={mockData} style={{}} />
     )
 
     // Verify that ScrollView is rendered
-    const scrollView = getByTestId('scroll-inflater-scrollview')
-    expect(scrollView).toBeTruthy()
+    expect(getByTestId('scroll-inflater-scrollview')).toBeTruthy()
 
     // Wait for the components to render
-    await waitFor(() => {
-      const renderedItems = getAllByText(/Data for Component/i)
-      expect(renderedItems).toHaveLength(2) // Check for the rendered items
-    })
+    const renderedItems = await findAllByText(/Data for Component/i)
+    expect(renderedItems).toHaveLength(2)
   })
 
   it('should render null if no components are provided', () => {
