@@ -1,3 +1,9 @@
 module.exports = {
-  presets: ['module:react-native-builder-bob/babel-preset'],
-};
+  presets: ['module:metro-react-native-babel-preset'],
+  env: {
+    test: {
+      plugins: ['@babel/plugin-transform-flow-strip-types'],
+    },
+  },
+  plugins: [['@babel/plugin-transform-private-methods', { loose: true }]],
+}

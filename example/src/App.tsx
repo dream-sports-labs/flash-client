@@ -1,20 +1,25 @@
-import { Text, View, StyleSheet } from 'react-native';
-import { multiply } from 'react-native-server-driven-ui';
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { SafeAreaProvider } from 'react-native-safe-area-context'
+import FlatListComponent from './screens/FlatListComponent'
+import { initializeSDUISDK } from './SduiUtils'
 
-const result = multiply(3, 7);
+const Stack = createNativeStackNavigator()
+
+initializeSDUISDK()
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
-  );
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="FlatListComponent"
+            component={FlatListComponent}
+            options={{ title: 'Welcome' }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </SafeAreaProvider>
+  )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
