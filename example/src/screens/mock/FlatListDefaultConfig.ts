@@ -134,21 +134,21 @@ export const flatListDefaultConfig: Component = {
                 },
               },
               components: [
-                // {
-                //   id: 9,
-                //   name: 'SduiImage',
-                //   styles: {
-                //     style: {
-                //       width: 60,
-                //       height: 60,
-                //       borderRadius: 50,
-                //       marginRight: 10,
-                //     },
-                //   },
-                //   data: {
-                //     uri: 'https://reactnative.dev/img/tiny_logo.png',
-                //   },
-                // },
+                {
+                  id: 9,
+                  name: 'SduiImage',
+                  styles: {
+                    style: {
+                      width: 60,
+                      height: 60,
+                      borderRadius: 50,
+                      marginRight: 10,
+                    },
+                  },
+                  data: {
+                    uri: 'https://reactnative.dev/img/tiny_logo.png',
+                  },
+                },
                 {
                   id: 10,
                   name: 'SduiText',
@@ -176,38 +176,7 @@ export const flatListDefaultConfig: Component = {
                   marginTop: 10,
                 },
               },
-              components: [
-                // {
-                //   id: 12,
-                //   name: 'SduiImage',
-                //   styles: {
-                //     style: {
-                //       backgroundColor: '#007BFF',
-                //       paddingVertical: 10,
-                //       paddingHorizontal: 20,
-                //       borderRadius: 5,
-                //     },
-                //   },
-                //   data: {
-                //     uri: 'https://reactnative.dev/img/tiny_logo.png',
-                //   },
-                // },
-                // {
-                //   id: 13,
-                //   name: 'SduiImage',
-                //   styles: {
-                //     style: {
-                //       backgroundColor: '#6C757D',
-                //       paddingVertical: 10,
-                //       paddingHorizontal: 20,
-                //       borderRadius: 5,
-                //     },
-                //   },
-                //   data: {
-                //     uri: 'https://reactnative.dev/img/tiny_logo.png',
-                //   },
-                // },
-              ],
+              components: [],
             },
           ],
         },

@@ -55,4 +55,7 @@ export const SDUI = new SduiService()
 export * from './types/types'
 export * from './renderer/inflaters/ScrollInflater'
 export * from './renderer/inflaters/FlatListInflater'
+export * from './sdui-components/base-components/SduiText'
+export * from './sdui-components/base-components/SduiView'
+export * from './sdui-components/base-components/SduiImage'
 export * from './core/SduiConfig'

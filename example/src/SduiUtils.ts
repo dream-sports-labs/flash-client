@@ -1,6 +1,7 @@
 import { type ISduiOptions } from '../../src/core/interfaces/IsduiOptions'
 import { SDUI } from 'react-native-server-driven-ui'
 import { sduiMockData } from './mocks/MockData'
+import { AppComponentList } from './component-registry/ComponentRegistry'
 
 export const initializeSDUISDK = () => {
   const sduiOptions: ISduiOptions = {
@@ -19,4 +20,5 @@ export const initializeSDUISDK = () => {
     sduiOptions
   )
   SDUI.setComponentsData(sduiMockData)
+  SDUI.registerComponent(AppComponentList)
 }
