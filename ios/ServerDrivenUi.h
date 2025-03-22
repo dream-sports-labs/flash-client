@@ -1,5 +1,5 @@
 
-#import "generated/RNServerDrivenUiSpec/RNServerDrivenUiSpec.h"
+#import "RNServerDrivenUiSpec.h"
 
 @interface ServerDrivenUi : NSObject <NativeServerDrivenUiSpec>
 
