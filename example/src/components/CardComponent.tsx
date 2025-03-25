@@ -1,10 +1,6 @@
 import React, { memo } from 'react'
-import {
-  type ConfigurableProps,
-  type PropData,
-  FlashImage,
-} from 'react-native-server-driven-ui'
-import { FlashView, FlashText } from 'react-native-server-driven-ui'
+import { type ConfigurableProps, type PropData, FlashImage } from 'flash-sdk'
+import { FlashView, FlashText } from 'flash-sdk'
 
 interface CardDataProps extends PropData {
   cardTitle: string

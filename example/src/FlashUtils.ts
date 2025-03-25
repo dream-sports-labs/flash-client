@@ -1,5 +1,5 @@
 import { type IFlashOptions } from '../../src/core/interfaces/IFlashOptions'
-import { Flash } from 'react-native-server-driven-ui'
+import { Flash } from 'flash-sdk'
 import { flashMockData } from './mocks/MockData'
 import { AppComponentList } from './component-registry/ComponentRegistry'
 

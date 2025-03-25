@@ -1,4 +1,4 @@
-import { type Component } from 'react-native-server-driven-ui'
+import { type Component } from 'flash-sdk'
 
 export const flashMockData: Component[] = [
   {

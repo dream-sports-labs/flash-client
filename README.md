@@ -14,19 +14,19 @@ Welcome to the React Native Server-Driven UI (Flash) SDK, designed to facilitate
 To integrate the Flash SDK into your React Native project, install it via npm:
 
 ```bash
-npm install react-native-server-driven-ui
+npm install flash-sdk
 ```
 Or using yarn:
 
 ```bash
-yarn add react-native-server-driven-ui
+yarn add flash-sdk
 ```
 ## Integration Guide
 **Initialization**
 
 Begin by initializing the SDK with your desired options, including custom event handlers and logging levels:
 ```bash
-import { Flash, IFlashOptions } from 'react-native-server-driven-ui';
+import { Flash, IFlashOptions } from 'flash-sdk';
 
 const flashOptions: IFlashOptions = {
   logLevel: 'info', // Options: 'info', 'warn', 'error', 'none'
@@ -50,7 +50,7 @@ In this setup, sendFlashEvent and sendFlashNonFatalEvent are custom event handle
 Register your custom components with the SDK to enable dynamic rendering based on server configurations. This process ensures that the SDK can recognize and render the components defined in your application. The SDK also includes a set of built-in components, such as FlashView and FlashText, which can be utilized directly.
 
 ```bash
-import { Flash } from 'react-native-server-driven-ui';
+import { Flash } from 'flash-sdk';
 import AppComponentList from './components/AppComponentList';
 
 Flash.registerComponent(AppComponentList);
@@ -62,7 +62,7 @@ By registering your components, you make them available for server-driven render
 
 Provide the SDK with the components' configuration data, which can be fetched from the server or defined locally. While the example below uses mock data (flashMockData), you can replace this with data retrieved from your backend to dynamically control the UI based on server-defined configurations.
 ```bash
-import { Flash } from 'react-native-server-driven-ui';
+import { Flash } from 'flash-sdk';
 import flashMockData from './flashMockData';
 
 // Replace flashMockData with your backend data
@@ -79,7 +79,7 @@ For rendering lists of data, the SDK provides the FlatListInflater component, wh
 
 ```bash
 import React from 'react';
-import { FlatListInflater, Flash } from 'react-native-server-driven-ui';
+import { FlatListInflater, Flash } from 'flash-sdk';
 import { flatListDefaultConfig } from './mock/FlatListDefaultConfig';
 import { ComponentName } from '../constants/AppConstants';
 

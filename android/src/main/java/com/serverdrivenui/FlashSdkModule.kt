@@ -1,11 +1,11 @@
-package com.serverdrivenui
+package com.FlashSdk
 
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.module.annotations.ReactModule
 
-@ReactModule(name = ServerDrivenUiModule.NAME)
-class ServerDrivenUiModule(reactContext: ReactApplicationContext) :
-  NativeServerDrivenUiSpec(reactContext) {
+@ReactModule(name = FlashSdkModule.NAME)
+class FlashSdkModule(reactContext: ReactApplicationContext) :
+  NativeFlashSdkSpec(reactContext) {
 
   override fun getName(): String {
     return NAME
@@ -18,6 +18,6 @@ class ServerDrivenUiModule(reactContext: ReactApplicationContext) :
   }
 
   companion object {
-    const val NAME = "ServerDrivenUi"
+    const val NAME = "FlashSdk"
   }
 }

@@ -1,4 +1,4 @@
-import { FlatListInflater, Flash } from 'react-native-server-driven-ui'
+import { FlatListInflater, Flash } from 'flash-sdk'
 import { flatListDefaultConfig } from './mock/FlatListDefaultConfig'
 import { ComponentName } from '../constants/AppConstants'
 
