@@ -1,6 +1,6 @@
 import { type Component } from '../types/types'
-import { sduiInstance } from './SduiInstance'
-import { SduiError } from '../errors/SduiError'
+import { flashInstance } from './FlashInstance'
+import { FlashError } from '../errors/FlashError'
 
 class ComponentService {
   private static instance: ComponentService
@@ -22,10 +22,13 @@ class ComponentService {
     try {
       return this.findComponentByName(componentName) || defaultComponent
     } catch (error) {
-      sduiInstance.sendSDUINonFatalEvent(
-        new SduiError(`SDUI: Error retrieving component "${componentName}".`, {
-          error,
-        })
+      flashInstance.sendFlashNonFatalEvent(
+        new FlashError(
+          `Flash: Error retrieving component "${componentName}".`,
+          {
+            error,
+          }
+        )
       )
       return defaultComponent
     }
@@ -39,9 +42,9 @@ class ComponentService {
         ) || null
       )
     } catch (error) {
-      sduiInstance.sendSDUINonFatalEvent(
-        new SduiError(
-          `SDUI: Error searching for component "${componentName}".`,
+      flashInstance.sendFlashNonFatalEvent(
+        new FlashError(
+          `Flash: Error searching for component "${componentName}".`,
           { error }
         )
       )
@@ -53,8 +56,8 @@ class ComponentService {
     try {
       this.componentsList.splice(0, this.componentsList.length, ...components) // Safe array reset
     } catch (error) {
-      sduiInstance.sendSDUINonFatalEvent(
-        new SduiError('SDUI: Error setting component data.', {
+      flashInstance.sendFlashNonFatalEvent(
+        new FlashError('Flash: Error setting component data.', {
           error,
           components,
         })

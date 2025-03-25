@@ -1,9 +1,9 @@
-import { FlatListInflater, SDUI } from 'react-native-server-driven-ui'
+import { FlatListInflater, Flash } from 'react-native-server-driven-ui'
 import { flatListDefaultConfig } from './mock/FlatListDefaultConfig'
 import { ComponentName } from '../constants/AppConstants'
 
 const FlatListComponent = () => {
-  const flatListComponent = SDUI.getComponentLayout(
+  const flatListComponent = Flash.getComponentLayout(
     ComponentName.FLAT_LIST_COMPONENT,
     flatListDefaultConfig
   )

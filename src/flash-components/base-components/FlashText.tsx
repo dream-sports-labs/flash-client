@@ -2,7 +2,7 @@ import React, { type ReactNode } from 'react'
 
 import { Text, type TextProps } from 'react-native'
 
-import { getSDUIProps, getSDUIStyles } from '../../utils/style-utils'
+import { getFlashProps, getFlashStyles } from '../../utils/style-utils'
 import { type ConfigurableProps } from 'react-native-server-driven-ui'
 
 // Helper function to filter values that are string, number, null or object and ignore other types
@@ -19,19 +19,19 @@ const filterContent = (value: unknown): string | number | null | undefined => {
 
 // Function to determine the final content to render
 const getContentToRender = (
-  labelFromSDUIProps: string | number | null | undefined,
+  labelFromFlashProps: string | number | null | undefined,
   labelFromData: string | number | null | undefined,
   children: ReactNode
 ): ReactNode => {
   return (
-    filterContent(labelFromSDUIProps) ??
+    filterContent(labelFromFlashProps) ??
     filterContent(labelFromData) ??
     children ??
     null
   )
 }
 
-export const SduiText = <T,>(
+export const FlashText = <T,>(
   props: Omit<TextProps, 'nativeID'> & {
     nativeID: string
     configProps: ConfigurableProps<T>
@@ -45,21 +45,21 @@ export const SduiText = <T,>(
   const combinedStyles = [
     rest.style,
     styles?.style ?? {},
-    getSDUIStyles(rest.nativeID, overrides),
+    getFlashStyles(rest.nativeID, overrides),
   ]
 
   // Retrieve additional props based on nativeID
-  const sduiProps = getSDUIProps(rest.nativeID, overrides)
+  const flashProps = getFlashProps(rest.nativeID, overrides)
 
-  // Destructure and exclude `text` from `sduiProps`
-  const { text: textFromSDUIProps, ...remainingSduiProps } = sduiProps || {}
+  // Destructure and exclude `text` from `flashProps`
+  const { text: textFromFlashProps, ...remainingFlashProps } = flashProps || {}
 
   // Extract text from data and filter it to ensure correct type
   const textFromData = filterContent((data as Partial<{ text: unknown }>)?.text)
 
   // Get the final content to render using the helper function
   const contentToRender: ReactNode = getContentToRender(
-    filterContent(textFromSDUIProps),
+    filterContent(textFromFlashProps),
     textFromData,
     children
   )
@@ -67,7 +67,7 @@ export const SduiText = <T,>(
   return (
     <Text
       {...rest} // Spread the rest of the props, including nativeID
-      {...remainingSduiProps} // Spread additional props retrieved from getSDUIProps, excluding `text`
+      {...remainingFlashProps} // Spread additional props retrieved from getFlashProps, excluding `text`
       {...data} // Spread any additional props from data
       ref={ref} // Forward ref
       style={combinedStyles} // Apply the combined styles

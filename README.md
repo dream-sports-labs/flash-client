@@ -1,6 +1,6 @@
-# React Native Server-Driven UI (SDUI) SDK
+# React Native Server-Driven UI (Flash) SDK
 
-Welcome to the React Native Server-Driven UI (SDUI) SDK, designed to facilitate dynamic user interfaces in React Native applications. This SDK enables real-time UI updates without necessitating client-side redeployments, enhancing flexibility and reducing release cycles.
+Welcome to the React Native Server-Driven UI (Flash) SDK, designed to facilitate dynamic user interfaces in React Native applications. This SDK enables real-time UI updates without necessitating client-side redeployments, enhancing flexibility and reducing release cycles.
 
 ## Features
 
@@ -11,7 +11,7 @@ Welcome to the React Native Server-Driven UI (SDUI) SDK, designed to facilitate 
 
 ## Installation
 
-To integrate the SDUI SDK into your React Native project, install it via npm:
+To integrate the Flash SDK into your React Native project, install it via npm:
 
 ```bash
 npm install react-native-server-driven-ui
@@ -26,47 +26,47 @@ yarn add react-native-server-driven-ui
 
 Begin by initializing the SDK with your desired options, including custom event handlers and logging levels:
 ```bash
-import { SDUI, ISduiOptions } from 'react-native-server-driven-ui';
+import { Flash, IFlashOptions } from 'react-native-server-driven-ui';
 
-const sduiOptions: ISduiOptions = {
+const flashOptions: IFlashOptions = {
   logLevel: 'info', // Options: 'info', 'warn', 'error', 'none'
 };
 
-SDUI.init(
+Flash.init(
   {
-    sendSDUIEvent(): void {
-      console.log('SDUI App Event:');
+    sendFlashEvent(): void {
+      console.log('Flash App Event:');
     },
-    sendSDUINonFatalEvent(error: Error): void {
-      console.log('SDUI App Non-fatal event:', error);
+    sendFlashNonFatalEvent(error: Error): void {
+      console.log('Flash App Non-fatal event:', error);
     },
   },
-  sduiOptions
+  flashOptions
 )
 ```
-In this setup, sendSDUIEvent and sendSDUINonFatalEvent are custom event handlers that allow you to manage and log events specific to your application. The logLevel option configures the verbosity of the SDK's internal logging.
+In this setup, sendFlashEvent and sendFlashNonFatalEvent are custom event handlers that allow you to manage and log events specific to your application. The logLevel option configures the verbosity of the SDK's internal logging.
 
 ## Registering Components
-Register your custom components with the SDK to enable dynamic rendering based on server configurations. This process ensures that the SDK can recognize and render the components defined in your application. The SDK also includes a set of built-in components, such as SDUIView and SDUIText, which can be utilized directly.
+Register your custom components with the SDK to enable dynamic rendering based on server configurations. This process ensures that the SDK can recognize and render the components defined in your application. The SDK also includes a set of built-in components, such as FlashView and FlashText, which can be utilized directly.
 
 ```bash
-import { SDUI } from 'react-native-server-driven-ui';
+import { Flash } from 'react-native-server-driven-ui';
 import AppComponentList from './components/AppComponentList';
 
-SDUI.registerComponent(AppComponentList);
+Flash.registerComponent(AppComponentList);
 ```
 
 By registering your components, you make them available for server-driven rendering, allowing the SDK to instantiate and display them as dictated by the server's configuration.
 
 ## Setting Component Data
 
-Provide the SDK with the components' configuration data, which can be fetched from the server or defined locally. While the example below uses mock data (sduiMockData), you can replace this with data retrieved from your backend to dynamically control the UI based on server-defined configurations.
+Provide the SDK with the components' configuration data, which can be fetched from the server or defined locally. While the example below uses mock data (flashMockData), you can replace this with data retrieved from your backend to dynamically control the UI based on server-defined configurations.
 ```bash
-import { SDUI } from 'react-native-server-driven-ui';
-import sduiMockData from './sduiMockData';
+import { Flash } from 'react-native-server-driven-ui';
+import flashMockData from './flashMockData';
 
-// Replace sduiMockData with your backend data
-SDUI.setComponentsData(sduiMockData);
+// Replace flashMockData with your backend data
+Flash.setComponentsData(flashMockData);
 ```
 By setting the components' data, you enable the SDK to render the UI dynamically based on the provided configurations, facilitating a server-driven approach to UI management.
 
@@ -79,12 +79,12 @@ For rendering lists of data, the SDK provides the FlatListInflater component, wh
 
 ```bash
 import React from 'react';
-import { FlatListInflater, SDUI } from 'react-native-server-driven-ui';
+import { FlatListInflater, Flash } from 'react-native-server-driven-ui';
 import { flatListDefaultConfig } from './mock/FlatListDefaultConfig';
 import { ComponentName } from '../constants/AppConstants';
 
 const FlatListComponent = () => {
-  const flatListComponent = SDUI.getComponentLayout(
+  const flatListComponent = Flash.getComponentLayout(
     ComponentName.FLAT_LIST_COMPONENT,
     flatListDefaultConfig
   );
@@ -112,7 +112,7 @@ For rendering scrollable content, the SDK provides the ScrollViewInflater compon
 By utilizing the ScrollViewInflater, you can dynamically render scrollable content that adapts to server-driven configurations, enhancing the flexibility and responsiveness of your application.
 
 ## Contributing
-We welcome contributions to enhance the SDUI SDK. To contribute:
+We welcome contributions to enhance the Flash SDK. To contribute:
 
 - Fork the repository.
 - Create a new branch: git checkout -b feature/YourFeatureName.

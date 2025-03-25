@@ -1,6 +1,6 @@
 export type LogLevel = 'info' | 'warn' | 'error' | 'none'
 
-export class SduiConfig {
+export class FlashConfig {
   private static logLevel: LogLevel = 'info' // Default log level
 
   static setLogLevel(level: LogLevel): void {

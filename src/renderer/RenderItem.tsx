@@ -1,8 +1,8 @@
 import { memo } from 'react'
-import { type SduiComponentConfigurableProps } from '../types/types'
+import { type FlashComponentConfigurableProps } from '../types/types'
 import { getComponent } from '../utils/render-utils'
 
-export const RenderItem = memo((props: SduiComponentConfigurableProps) => {
+export const RenderItem = memo((props: FlashComponentConfigurableProps) => {
   if (!props.components || props.components.length === 0) {
     return null
   }
@@ -23,7 +23,7 @@ export const RenderItem = memo((props: SduiComponentConfigurableProps) => {
             {item.components && item.components.length > 0 && (
               <RenderItem
                 components={
-                  item.components as SduiComponentConfigurableProps['components']
+                  item.components as FlashComponentConfigurableProps['components']
                 }
               />
             )}

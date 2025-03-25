@@ -2,11 +2,11 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import FlatListComponent from './screens/FlatListComponent'
-import { initializeSDUISDK } from './SduiUtils'
+import { initializeFlashSDK } from './FlashUtils'
 
 const Stack = createNativeStackNavigator()
 
-initializeSDUISDK()
+initializeFlashSDK()
 
 export default function App() {
   return (
@@ -16,7 +16,7 @@ export default function App() {
           <Stack.Screen
             name="FlatListComponent"
             component={FlatListComponent}
-            options={{ title: 'Welcome' }}
+            options={{ title: 'Welcome to Flash App' }}
           />
         </Stack.Navigator>
       </NavigationContainer>

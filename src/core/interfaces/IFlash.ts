@@ -1,13 +1,13 @@
 import React from 'react'
 import { type Component, type ConfigurableProps } from '../../types/types'
-import { type ISduiListeners } from './ISduiListeners'
-import { type ISduiOptions } from './IsduiOptions'
+import { type IFlashListeners } from './IFlashListeners'
+import { type IFlashOptions } from './IFlashOptions'
 
-export interface ISdui {
+export interface IFlash {
   /**
-   * Initializes SDUI with optional listeners and options.
+   * Initializes Flash with optional listeners and options.
    */
-  init(sduiListeners?: ISduiListeners, sduiOptions?: ISduiOptions): void
+  init(flashListeners?: IFlashListeners, flashOptions?: IFlashOptions): void
 
   /**
    * Registers new UI components.
@@ -17,7 +17,7 @@ export interface ISdui {
   ): void
 
   /**
-   * Sets component data within SDUI.
+   * Sets component data within Flash.
    */
   setComponentsData(components: Component[]): void
 

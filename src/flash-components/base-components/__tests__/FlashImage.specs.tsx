@@ -1,15 +1,15 @@
-import { SduiImage } from '../SduiImage'
-import { getSDUIProps, getSDUIStyles } from '../../../utils/style-utils'
+import { FlashImage } from '../FlashImage'
+import { getFlashProps, getFlashStyles } from '../../../utils/style-utils'
 import { Image } from 'react-native'
 import { render } from '../../../../jest/testing-utils'
 
 jest.mock('react-native/Libraries/Image/Image', () => jest.fn(() => null))
 jest.mock('../../../utils/style-utils', () => ({
-  getSDUIProps: jest.fn(),
-  getSDUIStyles: jest.fn(),
+  getFlashProps: jest.fn(),
+  getFlashStyles: jest.fn(),
 }))
 
-describe('SduiImage', () => {
+describe('FlashImage', () => {
   const mockNativeID = 'test-native-id'
 
   const mockConfigProps = {
@@ -23,22 +23,22 @@ describe('SduiImage', () => {
     configProps: mockConfigProps,
     style: { borderRadius: 10 },
   }
-  const getSduiPropsMock = getSDUIProps as jest.Mock
-  const getSDUIStylesMock = getSDUIStyles as jest.Mock
+  const getFlashPropsMock = getFlashProps as jest.Mock
+  const getFlashStylesMock = getFlashStyles as jest.Mock
 
   beforeEach(() => {
-    getSduiPropsMock.mockReturnValue({ resizeMode: 'contain' })
-    getSDUIStylesMock.mockReturnValue({ margin: 5 })
+    getFlashPropsMock.mockReturnValue({ resizeMode: 'contain' })
+    getFlashStylesMock.mockReturnValue({ margin: 5 })
   })
 
   it('should render Image with correct props and styles', () => {
-    render(<SduiImage {...defaultProps} />)
+    render(<FlashImage {...defaultProps} />)
 
-    expect(getSDUIProps).toHaveBeenCalledWith(
+    expect(getFlashProps).toHaveBeenCalledWith(
       mockNativeID,
       mockConfigProps.overrides
     )
-    expect(getSDUIStyles).toHaveBeenCalledWith(
+    expect(getFlashStyles).toHaveBeenCalledWith(
       mockNativeID,
       mockConfigProps.overrides
     )
@@ -49,9 +49,9 @@ describe('SduiImage', () => {
         style: [
           defaultProps.style, // style from props
           mockConfigProps.styles.style, // style from configProps
-          { margin: 5 }, // style from getSDUIStyles
+          { margin: 5 }, // style from getFlashStyles
         ],
-        resizeMode: 'contain', // from getSDUIProps
+        resizeMode: 'contain', // from getFlashProps
         source: { uri: 'test-source' }, // from configProps data
       }),
       {}
@@ -59,13 +59,13 @@ describe('SduiImage', () => {
   })
 
   it('should merge styles correctly', () => {
-    render(<SduiImage {...defaultProps} />)
+    render(<FlashImage {...defaultProps} />)
 
     // Assert that Image is passed the correct merged styles
     const expectedStyles = [
       defaultProps.style, // props styles
       mockConfigProps.styles.style, // configProps styles
-      { margin: 5 }, // styles from getSDUIStyles
+      { margin: 5 }, // styles from getFlashStyles
     ]
 
     expect(Image).toHaveBeenCalledWith(
@@ -77,7 +77,7 @@ describe('SduiImage', () => {
   })
 
   it('should pass dynamic data as props to Image', () => {
-    render(<SduiImage {...defaultProps} />)
+    render(<FlashImage {...defaultProps} />)
 
     // Verify that dynamic data from configProps is passed to Image
     expect(Image).toHaveBeenCalledWith(

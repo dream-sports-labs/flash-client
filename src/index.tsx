@@ -1,17 +1,17 @@
-import { sduiInstance } from './core/SduiInstance'
+import { flashInstance } from './core/FlashInstance'
 import { type Component, type ConfigurableProps } from './types/types'
 import React from 'react'
-import { type ISduiListeners } from './core/interfaces/ISduiListeners'
-import { type ISduiOptions } from './core/interfaces/IsduiOptions'
+import { type IFlashListeners } from './core/interfaces/IFlashListeners'
+import { type IFlashOptions } from './core/interfaces/IFlashOptions'
 
-class SduiService {
+class FlashService {
   /**
-   * Initializes the SDUI instance with optional listeners and configuration.
-   * @param sduiListeners - Event listeners for SDUI.
-   * @param sduiOptions - Configuration options for SDUI.
+   * Initializes the Flash instance with optional listeners and configuration.
+   * @param flashListeners - Event listeners for Flash.
+   * @param flashOptions - Configuration options for Flash.
    */
-  public init(sduiListeners?: ISduiListeners, sduiOptions?: ISduiOptions) {
-    sduiInstance.init(sduiListeners, sduiOptions)
+  public init(flashListeners?: IFlashListeners, flashOptions?: IFlashOptions) {
+    flashInstance.init(flashListeners, flashOptions)
   }
 
   /**
@@ -24,38 +24,38 @@ class SduiService {
     componentName: string,
     defaultComponent: Component
   ) {
-    return sduiInstance.getComponentLayout(componentName, defaultComponent)
+    return flashInstance.getComponentLayout(componentName, defaultComponent)
   }
 
   /**
-   * Stores and updates component data for SDUI.
+   * Stores and updates component data for Flash.
    * @param components - An array of components to store.
    */
   public setComponentsData(components: Array<Component>): void {
-    sduiInstance.setComponentsData(components)
+    flashInstance.setComponentsData(components)
   }
 
   /**
-   * Registers any custom components for SDUI rendering.
+   * Registers any custom components for Flash rendering.
    * @param components - A record containing component names as keys and React functional components as values.
    */
   public registerComponent(
     components: Record<string, React.FC<ConfigurableProps>>
   ): void {
-    sduiInstance.registerComponent(components)
+    flashInstance.registerComponent(components)
   }
 }
 
 /**
- * Exporting the SDUI instance to be used globally.
+ * Exporting the Flash instance to be used globally.
  */
-export const SDUI = new SduiService()
+export const Flash = new FlashService()
 
 // Re-exporting commonly used modules for easier access
 export * from './types/types'
 export * from './renderer/inflaters/ScrollInflater'
 export * from './renderer/inflaters/FlatListInflater'
-export * from './sdui-components/base-components/SduiText'
-export * from './sdui-components/base-components/SduiView'
-export * from './sdui-components/base-components/SduiImage'
-export * from './core/SduiConfig'
+export * from './flash-components/base-components/FlashText'
+export * from './flash-components/base-components/FlashView'
+export * from './flash-components/base-components/FlashImage'
+export * from './core/FlashConfig'

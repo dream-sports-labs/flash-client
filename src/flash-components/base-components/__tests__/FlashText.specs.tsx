@@ -1,15 +1,15 @@
-import { SduiText } from '../SduiText'
-import { getSDUIProps, getSDUIStyles } from '../../../utils/style-utils'
+import { FlashText } from '../FlashText'
+import { getFlashProps, getFlashStyles } from '../../../utils/style-utils'
 import { Text } from 'react-native'
 import { render } from '../../../../jest/testing-utils'
 
 jest.mock('react-native/Libraries/Text/Text', () => jest.fn(() => null))
 jest.mock('../../../utils/style-utils', () => ({
-  getSDUIProps: jest.fn(),
-  getSDUIStyles: jest.fn(),
+  getFlashProps: jest.fn(),
+  getFlashStyles: jest.fn(),
 }))
 
-describe('SduiText', () => {
+describe('FlashText', () => {
   const mockNativeID = 'test-native-id'
   const mockConfigProps = {
     styles: { style: { fontSize: 16 } },
@@ -23,23 +23,23 @@ describe('SduiText', () => {
     style: { color: 'blue' },
   }
 
-  const getSduiPropsMock = getSDUIProps as jest.Mock
-  const getSDUIStylesMock = getSDUIStyles as jest.Mock
+  const getFlashPropsMock = getFlashProps as jest.Mock
+  const getFlashStylesMock = getFlashStyles as jest.Mock
 
   beforeEach(() => {
-    getSduiPropsMock.mockReturnValue({ numberOfLines: 2 })
-    getSDUIStylesMock.mockReturnValue({ margin: 10 })
+    getFlashPropsMock.mockReturnValue({ numberOfLines: 2 })
+    getFlashStylesMock.mockReturnValue({ margin: 10 })
     jest.clearAllMocks()
   })
 
   it('should render Text with correct props and combined styles', () => {
-    render(<SduiText {...defaultProps} />)
+    render(<FlashText {...defaultProps} />)
 
-    expect(getSDUIProps).toHaveBeenCalledWith(
+    expect(getFlashProps).toHaveBeenCalledWith(
       mockNativeID,
       mockConfigProps.overrides
     )
-    expect(getSDUIStyles).toHaveBeenCalledWith(
+    expect(getFlashStyles).toHaveBeenCalledWith(
       mockNativeID,
       mockConfigProps.overrides
     )
@@ -49,9 +49,9 @@ describe('SduiText', () => {
         style: [
           defaultProps.style, // Style from props
           mockConfigProps.styles.style, // Style from configProps
-          { margin: 10 }, // Style from getSDUIStyles
+          { margin: 10 }, // Style from getFlashStyles
         ],
-        numberOfLines: 2, // From getSDUIProps
+        numberOfLines: 2, // From getFlashProps
         text: 'Sample Text', // From configProps.data
       }),
       {}
@@ -60,7 +60,7 @@ describe('SduiText', () => {
 
   it('should pass the correct content to Text', () => {
     const { rerender } = render(
-      <SduiText {...defaultProps}>Child Content</SduiText>
+      <FlashText {...defaultProps}>Child Content</FlashText>
     )
 
     expect(Text).toHaveBeenCalledWith(
@@ -76,9 +76,9 @@ describe('SduiText', () => {
       data: {},
     }
     rerender(
-      <SduiText {...defaultProps} configProps={updatedConfigProps}>
+      <FlashText {...defaultProps} configProps={updatedConfigProps}>
         Child Content
-      </SduiText>
+      </FlashText>
     )
 
     expect(Text).toHaveBeenCalledWith(
@@ -96,7 +96,7 @@ describe('SduiText', () => {
       data: {}, // No text data
     }
 
-    render(<SduiText {...defaultProps} configProps={updatedConfigProps} />)
+    render(<FlashText {...defaultProps} configProps={updatedConfigProps} />)
 
     expect(Text).toHaveBeenCalledWith(
       expect.objectContaining({
@@ -116,7 +116,7 @@ describe('SduiText', () => {
       data: { text: localizedValue },
     }
 
-    render(<SduiText {...defaultProps} configProps={updatedConfigProps} />)
+    render(<FlashText {...defaultProps} configProps={updatedConfigProps} />)
 
     expect(Text).toHaveBeenCalledWith(
       expect.objectContaining({
@@ -141,7 +141,7 @@ describe('SduiText', () => {
       data: { text: localizedValue },
     }
 
-    render(<SduiText {...defaultProps} configProps={updatedConfigProps} />)
+    render(<FlashText {...defaultProps} configProps={updatedConfigProps} />)
 
     expect(Text).toHaveBeenCalledWith(
       expect.objectContaining({
@@ -164,7 +164,7 @@ describe('SduiText', () => {
       data: { text: null },
     }
 
-    render(<SduiText {...defaultProps} configProps={updatedConfigProps} />)
+    render(<FlashText {...defaultProps} configProps={updatedConfigProps} />)
 
     expect(Text).toHaveBeenCalledWith(
       expect.objectContaining({
@@ -181,8 +181,8 @@ describe('SduiText', () => {
     )
   })
 
-  it('should render children when no text from data or SDUI props is available', () => {
-    getSduiPropsMock.mockReturnValue({ numberOfLines: 2 })
+  it('should render children when no text from data or Flash props is available', () => {
+    getFlashPropsMock.mockReturnValue({ numberOfLines: 2 })
 
     const updatedConfigProps = {
       ...mockConfigProps,
@@ -190,9 +190,9 @@ describe('SduiText', () => {
     }
 
     render(
-      <SduiText {...defaultProps} configProps={updatedConfigProps}>
+      <FlashText {...defaultProps} configProps={updatedConfigProps}>
         Child Content
-      </SduiText>
+      </FlashText>
     )
 
     expect(Text).toHaveBeenCalledWith(
@@ -210,15 +210,15 @@ describe('SduiText', () => {
     )
   })
 
-  it('should render null when no text from data, SDUI props, or children is available', () => {
-    getSduiPropsMock.mockReturnValue({ numberOfLines: 2 })
+  it('should render null when no text from data, Flash props, or children is available', () => {
+    getFlashPropsMock.mockReturnValue({ numberOfLines: 2 })
 
     const updatedConfigProps = {
       ...mockConfigProps,
       data: {},
     }
 
-    render(<SduiText {...defaultProps} configProps={updatedConfigProps} />)
+    render(<FlashText {...defaultProps} configProps={updatedConfigProps} />)
 
     expect(Text).toHaveBeenCalledWith(
       expect.objectContaining({

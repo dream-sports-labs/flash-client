@@ -6,7 +6,7 @@ export const flatListDefaultConfig: Component = {
   components: [
     {
       id: 0,
-      name: 'SduiComponent',
+      name: 'FlashComponent',
       styles: {
         style: {},
       },
@@ -17,7 +17,7 @@ export const flatListDefaultConfig: Component = {
       components: [
         {
           id: 1,
-          name: 'SduiView',
+          name: 'FlashView',
           styles: {
             style: {
               backgroundColor: '#FFFFFF',
@@ -44,7 +44,7 @@ export const flatListDefaultConfig: Component = {
           components: [
             {
               id: 2,
-              name: 'SduiView',
+              name: 'FlashView',
               styles: {
                 style: {
                   flexDirection: 'row',
@@ -56,7 +56,7 @@ export const flatListDefaultConfig: Component = {
               components: [
                 {
                   id: 3,
-                  name: 'SduiText',
+                  name: 'FlashText',
                   styles: {
                     style: {
                       fontSize: 18,
@@ -70,7 +70,7 @@ export const flatListDefaultConfig: Component = {
                 },
                 {
                   id: 4,
-                  name: 'SduiText',
+                  name: 'FlashText',
                   styles: {
                     style: {
                       fontSize: 14,
@@ -85,7 +85,7 @@ export const flatListDefaultConfig: Component = {
             },
             {
               id: 5,
-              name: 'SduiView',
+              name: 'FlashView',
               styles: {
                 style: {
                   flexDirection: 'row',
@@ -96,7 +96,7 @@ export const flatListDefaultConfig: Component = {
               components: [
                 {
                   id: 6,
-                  name: 'SduiText',
+                  name: 'FlashText',
                   styles: {
                     style: {
                       fontSize: 14,
@@ -109,7 +109,7 @@ export const flatListDefaultConfig: Component = {
                 },
                 {
                   id: 7,
-                  name: 'SduiText',
+                  name: 'FlashText',
                   styles: {
                     style: {
                       fontSize: 14,
@@ -124,7 +124,7 @@ export const flatListDefaultConfig: Component = {
             },
             {
               id: 8,
-              name: 'SduiView',
+              name: 'FlashView',
               styles: {
                 style: {
                   flexDirection: 'row',
@@ -136,7 +136,7 @@ export const flatListDefaultConfig: Component = {
               components: [
                 {
                   id: 9,
-                  name: 'SduiImage',
+                  name: 'FlashImage',
                   styles: {
                     style: {
                       width: 60,
@@ -151,7 +151,7 @@ export const flatListDefaultConfig: Component = {
                 },
                 {
                   id: 10,
-                  name: 'SduiText',
+                  name: 'FlashText',
                   styles: {
                     style: {
                       fontSize: 16,
@@ -167,7 +167,7 @@ export const flatListDefaultConfig: Component = {
             },
             {
               id: 11,
-              name: 'SduiView',
+              name: 'FlashView',
               styles: {
                 style: {
                   flexDirection: 'row',
@@ -184,7 +184,7 @@ export const flatListDefaultConfig: Component = {
     },
     {
       id: 0,
-      name: 'SduiComponent',
+      name: 'FlashComponent',
       styles: {
         style: {},
       },
@@ -195,7 +195,7 @@ export const flatListDefaultConfig: Component = {
       components: [
         {
           id: 1,
-          name: 'SduiView',
+          name: 'FlashView',
           styles: {
             style: {
               backgroundColor: '#FFFFFF',
@@ -222,7 +222,7 @@ export const flatListDefaultConfig: Component = {
           components: [
             {
               id: 2,
-              name: 'SduiView',
+              name: 'FlashView',
               styles: {
                 style: {
                   flexDirection: 'row',
@@ -234,7 +234,7 @@ export const flatListDefaultConfig: Component = {
               components: [
                 {
                   id: 3,
-                  name: 'SduiText',
+                  name: 'FlashText',
                   styles: {
                     style: {
                       fontSize: 18,
@@ -248,7 +248,7 @@ export const flatListDefaultConfig: Component = {
                 },
                 {
                   id: 4,
-                  name: 'SduiText',
+                  name: 'FlashText',
                   styles: {
                     style: {
                       fontSize: 14,
@@ -263,7 +263,7 @@ export const flatListDefaultConfig: Component = {
             },
             {
               id: 5,
-              name: 'SduiView',
+              name: 'FlashView',
               styles: {
                 style: {
                   flexDirection: 'row',
@@ -274,7 +274,7 @@ export const flatListDefaultConfig: Component = {
               components: [
                 {
                   id: 6,
-                  name: 'SduiText',
+                  name: 'FlashText',
                   styles: {
                     style: {
                       fontSize: 14,
@@ -287,7 +287,7 @@ export const flatListDefaultConfig: Component = {
                 },
                 {
                   id: 7,
-                  name: 'SduiText',
+                  name: 'FlashText',
                   styles: {
                     style: {
                       fontSize: 14,
@@ -302,7 +302,7 @@ export const flatListDefaultConfig: Component = {
             },
             {
               id: 8,
-              name: 'SduiView',
+              name: 'FlashView',
               styles: {
                 style: {
                   flexDirection: 'row',
@@ -314,7 +314,7 @@ export const flatListDefaultConfig: Component = {
               components: [
                 // {
                 //   id: 9,
-                //   name: 'SduiImage',
+                //   name: 'FlashImage',
                 //   styles: {
                 //     style: {
                 //       width: 60,
@@ -329,7 +329,7 @@ export const flatListDefaultConfig: Component = {
                 // },
                 {
                   id: 10,
-                  name: 'SduiText',
+                  name: 'FlashText',
                   styles: {
                     style: {
                       fontSize: 16,
@@ -345,7 +345,7 @@ export const flatListDefaultConfig: Component = {
             },
             {
               id: 11,
-              name: 'SduiView',
+              name: 'FlashView',
               styles: {
                 style: {
                   flexDirection: 'row',
@@ -357,7 +357,7 @@ export const flatListDefaultConfig: Component = {
               components: [
                 // {
                 //   id: 12,
-                //   name: 'SduiImage',
+                //   name: 'FlashImage',
                 //   styles: {
                 //     style: {
                 //       backgroundColor: '#007BFF',
@@ -372,7 +372,7 @@ export const flatListDefaultConfig: Component = {
                 // },
                 // {
                 //   id: 13,
-                //   name: 'SduiImage',
+                //   name: 'FlashImage',
                 //   styles: {
                 //     style: {
                 //       backgroundColor: '#6C757D',
@@ -393,7 +393,7 @@ export const flatListDefaultConfig: Component = {
     },
     {
       id: 3,
-      name: 'SduiText',
+      name: 'FlashText',
       styles: {
         style: {
           fontSize: 14,
@@ -403,11 +403,11 @@ export const flatListDefaultConfig: Component = {
         },
       },
       data: {
-        text: 'Dummy Sdui Text Base Component from Default Config',
+        text: 'Dummy Flash Text Base Component from Default Config',
       },
 
       overrides: {
-        'dummy-sdui-text': {
+        'dummy-flash-text': {
           styles: {
             style: {
               fontSize: 16,

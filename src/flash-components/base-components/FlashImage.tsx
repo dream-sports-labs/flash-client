@@ -1,8 +1,8 @@
 import { Image, type ImageProps } from 'react-native'
-import { getSDUIProps, getSDUIStyles } from '../../utils/style-utils'
+import { getFlashProps, getFlashStyles } from '../../utils/style-utils'
 import { type ConfigurableProps } from 'react-native-server-driven-ui'
 
-type SduiImageProps<T> = ImageProps & {
+type FlashImageProps<T> = ImageProps & {
   nativeID: string
   configProps: ConfigurableProps<T>
 }
@@ -16,7 +16,7 @@ const wrappedUriIntoSource = (props: { uri?: string } | undefined) => {
   return props
 }
 
-export const SduiImage = <T,>(props: SduiImageProps<T>) => {
+export const FlashImage = <T,>(props: FlashImageProps<T>) => {
   const { configProps, ...rest } = props
   const { styles, overrides, data } = configProps
 
@@ -24,11 +24,13 @@ export const SduiImage = <T,>(props: SduiImageProps<T>) => {
   const combinedStyles = [
     rest.style,
     styles?.style ?? {},
-    getSDUIStyles(rest.nativeID, overrides),
+    getFlashStyles(rest.nativeID, overrides),
   ]
 
   // Retrieve and transform additional props based on nativeID
-  const sduiProps = wrappedUriIntoSource(getSDUIProps(rest.nativeID, overrides))
+  const flashProps = wrappedUriIntoSource(
+    getFlashProps(rest.nativeID, overrides)
+  )
 
   // Transform data to include source instead of uri if necessary
   const dataWithSource =
@@ -39,7 +41,7 @@ export const SduiImage = <T,>(props: SduiImageProps<T>) => {
   return (
     <Image
       {...rest} // Spread rest of the props, including nativeID, but excluding configProps
-      {...sduiProps} // Spread additional props with modified source if uri is present
+      {...flashProps} // Spread additional props with modified source if uri is present
       {...dataWithSource} // Spread data with modified source if uri is present
       style={combinedStyles as never} // Apply the merged styles
     />
