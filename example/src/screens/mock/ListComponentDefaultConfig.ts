@@ -1,8 +1,8 @@
 import { type Component } from 'flash-sdk'
 
-export const flatListDefaultConfig: Component = {
+export const listComponentDefaultConfig: Component = {
   id: 2,
-  name: 'FlatListComponent',
+  name: 'ListComponent',
   components: [
     {
       id: 0,

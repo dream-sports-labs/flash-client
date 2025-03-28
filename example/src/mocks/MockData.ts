@@ -3,7 +3,7 @@ import { type Component } from 'flash-sdk'
 export const flashMockData: Component[] = [
   {
     id: 2,
-    name: 'FlatListComponent',
+    name: 'ListComponent',
     components: [
       {
         id: 3,
