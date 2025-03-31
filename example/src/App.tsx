@@ -16,7 +16,7 @@ export default function App() {
           <Stack.Screen
             name="ListComponent"
             component={ListComponent}
-            options={{ title: 'Welcome to Flash App' }}
+            options={{ title: '⚡ Flash' }}
           />
         </Stack.Navigator>
       </NavigationContainer>
