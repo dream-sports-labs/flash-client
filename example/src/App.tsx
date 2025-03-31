@@ -2,11 +2,11 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import ListComponent from './screens/ListComponent'
-import { initializeFlashSDK } from './FlashUtils'
+import { initializeFlashClient } from './FlashUtils'
 
 const Stack = createNativeStackNavigator()
 
-initializeFlashSDK()
+initializeFlashClient()
 
 export default function App() {
   return (

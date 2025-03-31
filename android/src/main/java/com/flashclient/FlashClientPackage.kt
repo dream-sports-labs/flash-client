@@ -1,4 +1,4 @@
-package com.FlashSdk
+package com.FlashClient
 
 import com.facebook.react.BaseReactPackage
 import com.facebook.react.bridge.NativeModule
@@ -7,10 +7,10 @@ import com.facebook.react.module.model.ReactModuleInfo
 import com.facebook.react.module.model.ReactModuleInfoProvider
 import java.util.HashMap
 
-class FlashSdkPackage : BaseReactPackage() {
+class FlashClientPackage : BaseReactPackage() {
   override fun getModule(name: String, reactContext: ReactApplicationContext): NativeModule? {
-    return if (name == FlashSdkModule.NAME) {
-      FlashSdkModule(reactContext)
+    return if (name == FlashClientModule.NAME) {
+      FlashClientModule(reactContext)
     } else {
       null
     }
@@ -19,9 +19,9 @@ class FlashSdkPackage : BaseReactPackage() {
   override fun getReactModuleInfoProvider(): ReactModuleInfoProvider {
     return ReactModuleInfoProvider {
       val moduleInfos: MutableMap<String, ReactModuleInfo> = HashMap()
-      moduleInfos[FlashSdkModule.NAME] = ReactModuleInfo(
-        FlashSdkModule.NAME,
-        FlashSdkModule.NAME,
+      moduleInfos[FlashClientModule.NAME] = ReactModuleInfo(
+        FlashClientModule.NAME,
+        FlashClientModule.NAME,
         false,  // canOverrideExistingModule
         false,  // needsEagerInit
         true,  // hasConstants

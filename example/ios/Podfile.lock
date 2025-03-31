@@ -3,7 +3,7 @@ PODS:
   - DoubleConversion (1.1.6)
   - fast_float (6.1.4)
   - FBLazyVector (0.77.0)
-  - flash-sdk (0.1.0):
+  - flash-client (0.1.0):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1639,7 +1639,7 @@ DEPENDENCIES:
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - fast_float (from `../node_modules/react-native/third-party-podspecs/fast_float.podspec`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
-  - flash-sdk (from `../..`)
+  - flash-client (from `../..`)
   - fmt (from `../node_modules/react-native/third-party-podspecs/fmt.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
   - hermes-engine (from `../node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec`)
@@ -1720,7 +1720,7 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/react-native/third-party-podspecs/fast_float.podspec"
   FBLazyVector:
     :path: "../node_modules/react-native/Libraries/FBLazyVector"
-  flash-sdk:
+  flash-client:
     :path: "../.."
   fmt:
     :podspec: "../node_modules/react-native/third-party-podspecs/fmt.podspec"
@@ -1857,7 +1857,7 @@ SPEC CHECKSUMS:
   DoubleConversion: cb417026b2400c8f53ae97020b2be961b59470cb
   fast_float: 06eeec4fe712a76acc9376682e4808b05ce978b6
   FBLazyVector: 2bc03a5cf64e29c611bbc5d7eb9d9f7431f37ee6
-  flash-sdk: 9266728172d8cd9cca4a4241ba1cc816ea9732b9
+  flash-client: a4b6e135878df449990d2e5d22516cad4861bcee
   fmt: a40bb5bd0294ea969aaaba240a927bd33d878cdd
   glog: eb93e2f488219332457c3c4eafd2738ddc7e80b8
   hermes-engine: 1f783c3d53940aed0d2c84586f0b7a85ab7827ef
@@ -1924,6 +1924,6 @@ SPEC CHECKSUMS:
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
   Yoga: 78d74e245ed67bb94275a1316cdc170b9b7fe884
 
-PODFILE CHECKSUM: 27914aec9ec0901131aa7fdc495059dda1076344
+PODFILE CHECKSUM: d9d1adc5db1e7139e1165ac04a978f06b16eed90
 
 COCOAPODS: 1.15.2

@@ -6534,9 +6534,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"flash-sdk-example@workspace:example":
+"flash-client-example@workspace:example":
   version: 0.0.0-use.local
-  resolution: "flash-sdk-example@workspace:example"
+  resolution: "flash-client-example@workspace:example"
   dependencies:
     "@babel/core": ^7.25.2
     "@babel/preset-env": ^7.25.3
@@ -6557,9 +6557,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"flash-sdk@workspace:.":
+"flash-client@workspace:.":
   version: 0.0.0-use.local
-  resolution: "flash-sdk@workspace:."
+  resolution: "flash-client@workspace:."
   dependencies:
     "@commitlint/config-conventional": ^17.0.2
     "@evilmartians/lefthook": ^1.5.0

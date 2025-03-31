@@ -1,11 +1,11 @@
-package com.FlashSdk
+package com.FlashClient
 
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.module.annotations.ReactModule
 
-@ReactModule(name = FlashSdkModule.NAME)
-class FlashSdkModule(reactContext: ReactApplicationContext) :
-  NativeFlashSdkSpec(reactContext) {
+@ReactModule(name = FlashClientModule.NAME)
+class FlashClientModule(reactContext: ReactApplicationContext) :
+  NativeFlashClientSpec(reactContext) {
 
   override fun getName(): String {
     return NAME
@@ -18,6 +18,6 @@ class FlashSdkModule(reactContext: ReactApplicationContext) :
   }
 
   companion object {
-    const val NAME = "FlashSdk"
+    const val NAME = "FlashClient"
   }
 }

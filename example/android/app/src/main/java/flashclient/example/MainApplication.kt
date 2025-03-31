@@ -1,4 +1,4 @@
-package FlashSdk.example
+package FlashClient.example
 
 import android.app.Application
 import com.facebook.react.PackageList

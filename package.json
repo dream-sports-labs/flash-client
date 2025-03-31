@@ -1,5 +1,5 @@
 {
-  "name": "flash-sdk",
+  "name": "flash-client",
   "version": "0.1.0",
   "description": "React Native Server Driven UI",
   "source": "./src/index.tsx",
@@ -37,7 +37,7 @@
     "!**/.*"
   ],
   "scripts": {
-    "example": "yarn workspace flash-sdk-example",
+    "example": "yarn workspace flash-client-example",
     "test": "jest",
     "typecheck": "tsc",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
@@ -52,14 +52,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anirudhdream11/flash-sdk.git"
+    "url": "git+https://github.com/anirudhdream11/flash-client.git"
   },
   "author": "anirudhdream11 <anirudh.bharti@dream11.com> (https://github.com/anirudhdream11)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/anirudhdream11/flash-sdk/issues"
+    "url": "https://github.com/anirudhdream11/flash-client/issues"
   },
-  "homepage": "https://github.com/anirudhdream11/flash-sdk#readme",
+  "homepage": "https://github.com/anirudhdream11/flash-client#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
@@ -186,14 +186,14 @@
     ]
   },
   "codegenConfig": {
-    "name": "RNFlashSdkSpec",
+    "name": "RNFlashClientSpec",
     "type": "modules",
     "jsSrcsDir": "src",
     "outputDir": {
       "android": "android/generated"
     },
     "android": {
-      "javaPackageName": "com.FlashSdk"
+      "javaPackageName": "com.FlashClient"
     }
   },
   "create-react-native-library": {

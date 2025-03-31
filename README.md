@@ -1,6 +1,6 @@
-# ⚡ Flash SDK — Server-Driven UI for React Native
+# ⚡ Flash Client — Server-Driven UI for React Native
 
-**Flash SDK** enables fully dynamic, server-controlled UIs in React Native using JSON-based configuration.
+**Flash Client** enables fully dynamic, server-controlled UIs in React Native using JSON-based configuration.
 It lets you change your app layout, styling, and behavior — without a new app release.
 
 > Push UI updates from backend ➡ Render them on app instantly using `FlashComponent` + Inflaters
@@ -146,7 +146,7 @@ const FooterButton = ({ text, onPress }) => (
 ### ✅ Flash-Compatible Component
 
 ```tsx
-import { FlashPressable, FlashText } from 'flash-sdk'
+import { FlashPressable, FlashText } from 'flash-client'
 
 const FooterButtonFlash = (props: ConfigurableProps) => {
   const { data } = props
@@ -224,7 +224,7 @@ Even complex business components can be rendered — as long as they're Flash-Co
 Before rendering, you must register Flash-compatible components.
 
 ```tsx
-import { Flash } from 'flash-sdk'
+import { Flash } from 'flash-client'
 import { FooterButtonFlash, MatchCard } from './components'
 
 Flash.registerComponent({
@@ -240,9 +240,9 @@ Flash.registerComponent({
 ### 1️⃣ Install
 
 ```bash
-npm install flash-sdk
+npm install flash-client
 # or
-yarn add flash-sdk
+yarn add flash-client
 ```
 
 ---

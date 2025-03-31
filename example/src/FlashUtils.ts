@@ -1,9 +1,9 @@
 import { type IFlashOptions } from '../../src/core/interfaces/IFlashOptions'
-import { Flash } from 'flash-sdk'
+import { Flash } from 'flash-client'
 import { flashMockData } from './mocks/MockData'
 import { AppComponentList } from './component-registry/ComponentRegistry'
 
-export const initializeFlashSDK = () => {
+export const initializeFlashClient = () => {
   const flashOptions: IFlashOptions = {
     logLevel: 'info',
   }

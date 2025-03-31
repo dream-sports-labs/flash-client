@@ -1,4 +1,4 @@
-import { FlatListInflater, Flash } from 'flash-sdk'
+import { FlatListInflater, Flash } from 'flash-client'
 import { listComponentDefaultConfig } from './mock/ListComponentDefaultConfig'
 import { ComponentName } from '../constants/AppConstants'
 

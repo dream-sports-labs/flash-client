@@ -1,4 +1,4 @@
-import { type Component } from 'flash-sdk'
+import { type Component } from 'flash-client'
 
 export const listComponentDefaultConfig: Component = {
   id: 2,

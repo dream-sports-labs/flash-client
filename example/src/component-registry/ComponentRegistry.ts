@@ -1,4 +1,4 @@
-import type { ConfigurableProps } from 'flash-sdk'
+import type { ConfigurableProps } from 'flash-client'
 import { CardComponent } from '../components/CardComponent'
 import React from 'react'
 import { createComponent } from '../../../src/core/createComponent'

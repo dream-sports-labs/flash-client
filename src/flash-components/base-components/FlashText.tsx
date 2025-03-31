@@ -3,7 +3,7 @@ import React, { type ReactNode } from 'react'
 import { Text, type TextProps } from 'react-native'
 
 import { getFlashProps, getFlashStyles } from '../../utils/style-utils'
-import { type ConfigurableProps } from 'flash-sdk'
+import { type ConfigurableProps } from 'flash-client'
 
 // Helper function to filter values that are string, number, null or object and ignore other types
 const filterContent = (value: unknown): string | number | null | undefined => {
