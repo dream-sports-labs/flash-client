@@ -1,6 +1,6 @@
-# ⚡ Flash Client — Server-Driven UI for React Native
+# ⚡ Flash — Server-Driven UI for React Native
 
-**Flash Client** enables fully dynamic, server-controlled UIs in React Native using JSON-based configuration.
+**Flash** enables fully dynamic, server-controlled UIs in React Native using JSON-based configuration.
 It lets you change your app layout, styling, and behavior — without a new app release.
 
 > Push UI updates from backend ➡ Render them on app instantly using `FlashComponent` + Inflaters
