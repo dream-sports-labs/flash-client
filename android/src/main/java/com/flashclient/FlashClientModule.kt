@@ -1,4 +1,4 @@
-package com.FlashClient
+package com.flashClient
 
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.module.annotations.ReactModule

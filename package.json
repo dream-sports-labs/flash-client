@@ -193,7 +193,7 @@
       "android": "android/generated"
     },
     "android": {
-      "javaPackageName": "com.FlashClient"
+      "javaPackageName": "com.flashClient"
     }
   },
   "create-react-native-library": {

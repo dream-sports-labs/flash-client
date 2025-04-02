@@ -1,4 +1,4 @@
-package com.FlashClient
+package com.flashClient
 
 import com.facebook.react.BaseReactPackage
 import com.facebook.react.bridge.NativeModule
