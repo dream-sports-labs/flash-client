@@ -133,6 +133,11 @@ jobs:
             echo "turbo_cache_hit=1" >> $GITHUB_ENV
           fi
 
+      - name: Generate Codegen Artifacts
+        if: env.turbo_cache_hit != 1
+        run: |
+          yarn react-native generate-specs
+
       - name: Cache cocoapods
         if: env.turbo_cache_hit != 1
         id: cocoapods-cache
