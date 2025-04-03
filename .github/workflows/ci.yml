@@ -72,7 +72,7 @@ jobs:
           cd example/android
           ./gradlew clean
           cd ../..
-          yarn android:build # replace with your actual build command
+          yarn android
 
   build-ios:
     runs-on: macos-14
@@ -94,4 +94,4 @@ jobs:
           cd example/ios
           pod install --repo-update
           cd ../..
-          yarn ios:build # replace with your actual iOS build command
+          yarn ios
