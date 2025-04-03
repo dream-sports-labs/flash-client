@@ -109,7 +109,7 @@ jobs:
   build-ios:
     runs-on: macos-14
     env:
-      TURBO_CACHE_DIR: .turbo/ios_cache
+      TURBO_CACHE_DIR: .turbo/ios
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -154,4 +154,4 @@ jobs:
 
       - name: Build example for iOS
         run: |
-          yarn ios
+          yarn turbo run build:ios --cache-dir="${{ env.TURBO_CACHE_DIR }}"
