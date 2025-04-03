@@ -71,7 +71,7 @@ jobs:
           yarn react-native generate-specs || echo "No codegen step needed"
           cd example/android
           ./gradlew clean
-          cd ../..
+          cd ..
           yarn android
 
   build-ios:
@@ -93,5 +93,5 @@ jobs:
           yarn react-native generate-specs || echo "No codegen step needed"
           cd example/ios
           pod install --repo-update
-          cd ../..
+          cd ..
           yarn ios
