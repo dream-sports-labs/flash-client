@@ -7,7 +7,7 @@ import {
 } from 'react-native'
 
 /**
- * Represents a single component in the SDUI (Server-Driven UI) structure.
+ * Represents a single component in the Flash (Server-Driven UI) structure.
  *
  * - `id`: A unique identifier for the component, used for distinguishing between different components.
  * - `name`: The name of the component, which typically corresponds to a specific UI element or a custom component type.
@@ -85,9 +85,10 @@ export type ConfigurableProps<T = never> = {
  *
  * @template T - The type of the data prop. Defaults to `never` if not specified.
  */
-export type SduiComponentConfigurableProps<T = never> = ConfigurableProps<T> & {
-  readonly children?: JSX.Element
-}
+export type FlashComponentConfigurableProps<T = never> =
+  ConfigurableProps<T> & {
+    readonly children?: JSX.Element
+  }
 
 /**
  * Represents the data that can be passed to a component's `data` prop.

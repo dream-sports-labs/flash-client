@@ -1,19 +1,19 @@
 import React from 'react'
 import { type ConfigurableProps } from '../types/types'
-import { sduiInstance } from './SduiInstance'
-import { SduiError } from '../errors/SduiError'
-import { SduiView } from '../sdui-components/base-components/SduiView'
-import { SduiImage } from '../sdui-components/base-components/SduiImage'
-import { SduiText } from '../sdui-components/base-components/SduiText'
+import { flashInstance } from './FlashInstance'
+import { FlashError } from '../errors/FlashError'
+import { FlashView } from '../flash-components/base-components/FlashView'
+import { FlashImage } from '../flash-components/base-components/FlashImage'
+import { FlashText } from '../flash-components/base-components/FlashText'
 import { createComponent } from './createComponent'
-import { SduiComponent } from '../sdui-components/generic-components/SduiComponent'
+import { FlashComponent } from '../flash-components/generic-components/FlashComponent'
 
 class ComponentRegistry {
-  private SduiComponentList: Record<string, React.FC<ConfigurableProps>> = {
-    SduiView: createComponent(SduiView, 'default-view', true),
-    SduiText: createComponent(SduiText, 'default-text', true),
-    SduiImage: createComponent(SduiImage, 'default-image', true),
-    SduiComponent: createComponent(SduiComponent),
+  private FlashComponentList: Record<string, React.FC<ConfigurableProps>> = {
+    FlashView: createComponent(FlashView, 'default-view', true),
+    FlashText: createComponent(FlashText, 'default-text', true),
+    FlashImage: createComponent(FlashImage, 'default-image', true),
+    FlashComponent: createComponent(FlashComponent),
   }
 
   private static instance: ComponentRegistry
@@ -32,32 +32,34 @@ class ComponentRegistry {
   ): void {
     try {
       Object.keys(components).forEach((key) => {
-        if (this.SduiComponentList[key]) {
-          sduiInstance.sendSDUINonFatalEvent(
-            new SduiError(`Component "${key}" is being overwritten.`, {
-              existingComponent: this.SduiComponentList[key],
+        if (this.FlashComponentList[key]) {
+          flashInstance.sendFlashNonFatalEvent(
+            new FlashError(`Component "${key}" is being overwritten.`, {
+              existingComponent: this.FlashComponentList[key],
               newComponent: components[key],
             })
           )
         }
       })
-      this.SduiComponentList = { ...this.SduiComponentList, ...components }
+      this.FlashComponentList = { ...this.FlashComponentList, ...components }
     } catch (error) {
-      sduiInstance.sendSDUINonFatalEvent(
-        new SduiError('Error registering components.', { error, components })
+      flashInstance.sendFlashNonFatalEvent(
+        new FlashError('Error registering components.', { error, components })
       )
     }
   }
 
-  public getSDUIRegisteredComponent(name: string): React.FC<ConfigurableProps> {
-    if (!this.SduiComponentList[name]) {
-      sduiInstance.sendSDUINonFatalEvent(
-        new SduiError(`Component "${name}" not found.`, {
+  public getFlashRegisteredComponent(
+    name: string
+  ): React.FC<ConfigurableProps> {
+    if (!this.FlashComponentList[name]) {
+      flashInstance.sendFlashNonFatalEvent(
+        new FlashError(`Component "${name}" not found.`, {
           requestedComponent: name,
         })
       )
     }
-    return this.SduiComponentList[name]
+    return this.FlashComponentList[name]
   }
 }
 

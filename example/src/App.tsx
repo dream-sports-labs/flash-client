@@ -1,12 +1,12 @@
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
-import FlatListComponent from './screens/FlatListComponent'
-import { initializeSDUISDK } from './SduiUtils'
+import ListComponent from './screens/ListComponent'
+import { initializeFlashClient } from './FlashUtils'
 
 const Stack = createNativeStackNavigator()
 
-initializeSDUISDK()
+initializeFlashClient()
 
 export default function App() {
   return (
@@ -14,9 +14,9 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
-            name="FlatListComponent"
-            component={FlatListComponent}
-            options={{ title: 'Welcome' }}
+            name="ListComponent"
+            component={ListComponent}
+            options={{ title: '⚡ Flash' }}
           />
         </Stack.Navigator>
       </NavigationContainer>

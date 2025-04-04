@@ -2,7 +2,7 @@ import { View, type ViewProps } from 'react-native'
 
 import { getComponent } from '../../utils/render-utils'
 import { RenderItem } from '../RenderItem'
-import { type SduiComponentConfigurableProps } from '../../types/types'
+import { type FlashComponentConfigurableProps } from '../../types/types'
 import { render, screen } from '../../../jest/testing-utils'
 
 // Mock View component with proper typing for props
@@ -12,12 +12,12 @@ jest.mock('../../utils/render-utils', () => ({
   getComponent: jest.fn(),
 }))
 
-jest.mock('../../sdui-components/base-components/SduiView', () => ({
-  SduiView: jest.fn(() => <MockView testID="sdui-view" />),
+jest.mock('../../flash-components/base-components/FlashView', () => ({
+  FlashView: jest.fn(() => <MockView testID="flash-view" />),
 }))
 
 describe('RenderItem Component', () => {
-  const mockComponent: SduiComponentConfigurableProps = {
+  const mockComponent: FlashComponentConfigurableProps = {
     components: [
       {
         id: 1,

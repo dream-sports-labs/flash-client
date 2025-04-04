@@ -1,10 +1,6 @@
 import React, { memo } from 'react'
-import {
-  type ConfigurableProps,
-  type PropData,
-  SduiImage,
-} from 'react-native-server-driven-ui'
-import { SduiView, SduiText } from 'react-native-server-driven-ui'
+import { type ConfigurableProps, type PropData, FlashImage } from 'flash-client'
+import { FlashView, FlashText } from 'flash-client'
 
 interface CardDataProps extends PropData {
   cardTitle: string
@@ -14,7 +10,7 @@ interface CardDataProps extends PropData {
 export const CardComponent: React.FC<ConfigurableProps<CardDataProps>> = memo(
   (props: ConfigurableProps<CardDataProps>) => {
     return (
-      <SduiView
+      <FlashView
         style={[
           {
             borderRadius: 8,
@@ -25,16 +21,16 @@ export const CardComponent: React.FC<ConfigurableProps<CardDataProps>> = memo(
           },
           props.styles,
         ]}
-        nativeID="card-sdui-view"
+        nativeID="card-flash-view"
         configProps={props}
       >
-        <SduiImage
+        <FlashImage
           nativeID="card-image"
           configProps={props}
           src={props.data?.imageUrl || 'default-image.jpg'}
           style={{ width: '100%', height: 150 }}
         />
-        <SduiText
+        <FlashText
           nativeID="card-title"
           configProps={props}
           style={{
@@ -45,8 +41,8 @@ export const CardComponent: React.FC<ConfigurableProps<CardDataProps>> = memo(
           }}
         >
           {props.data?.cardTitle || 'Card Title'}
-        </SduiText>
-      </SduiView>
+        </FlashText>
+      </FlashView>
     )
   }
 )

@@ -1,125 +1,346 @@
-# React Native Server-Driven UI (SDUI) SDK
+# ⚡ Flash — Server-Driven UI for React Native
 
-Welcome to the React Native Server-Driven UI (SDUI) SDK, designed to facilitate dynamic user interfaces in React Native applications. This SDK enables real-time UI updates without necessitating client-side redeployments, enhancing flexibility and reducing release cycles.
+**Flash** enables fully dynamic, server-controlled UIs in React Native using JSON-based configuration.
+It lets you change your app layout, styling, and behavior — without a new app release.
 
-## Features
+> Push UI updates from backend ➡ Render them on app instantly using `FlashComponent` + Inflaters
 
-- **Dynamic UI Rendering**: Fetch and render UI components based on server configurations, enabling real-time updates and personalized experiences.
-- **Component Registry**: Register and manage reusable UI components that can be dynamically rendered as specified by the server.
-- **Error Handling**: Implement robust mechanisms for capturing and reporting non-fatal errors, ensuring a stable application.
-- **Logging**: Utilize configurable logging levels to monitor SDK operations and maintain transparency in UI rendering processes.
+---
 
-## Installation
+## 📦 What is Flash?
 
-To integrate the SDUI SDK into your React Native project, install it via npm:
+Flash is a Server-Driven UI (SDUI) framework that uses a **render engine + inflater system** to interpret backend JSON into real, functional UI in React Native.
 
-```bash
-npm install react-native-server-driven-ui
+- Supports both simple and complex layouts
+- Enables styling and prop overrides on baked components
+- Works with dynamic lists, scroll views, tabs, etc.
+- Powers reusable, templatized, data-driven UI blocks
+
+---
+
+## 📐 Specs: Core Flash Schema
+
+Every UI element is defined as a `Component` in JSON. Here are the key types:
+
+### `Component`
+
+```ts
+type Component = {
+  id?: number;
+  name: string;
+  components?: Array<Component>; // Children
+  styles?: Style;
+  overrides?: Overrides;
+  data?: PropData;
+  version?: string;
+  dataId?: string;
+}
 ```
-Or using yarn:
 
-```bash
-yarn add react-native-server-driven-ui
+### `Style`, `PropData`, `Overrides`
+
+```ts
+type Style = {
+  [key: string]: ViewStyle | TextStyle | ImageStyle;
+}
+
+type PropData = {
+  [key: string]: string | number | boolean | null | PropData | Array<PropData>;
+}
+
+type Overrides = {
+  [nativeId: string]: {
+    props?: PropData;
+    styles?: Style;
+  };
+}
 ```
-## Integration Guide
-**Initialization**
 
-Begin by initializing the SDK with your desired options, including custom event handlers and logging levels:
-```bash
-import { SDUI, ISduiOptions } from 'react-native-server-driven-ui';
+### `ConfigurableProps<T>`
 
-const sduiOptions: ISduiOptions = {
-  logLevel: 'info', // Options: 'info', 'warn', 'error', 'none'
-};
+Every Flash-compatible component must accept these props:
 
-SDUI.init(
-  {
-    sendSDUIEvent(): void {
-      console.log('SDUI App Event:');
-    },
-    sendSDUINonFatalEvent(error: Error): void {
-      console.log('SDUI App Non-fatal event:', error);
-    },
-  },
-  sduiOptions
+```ts
+type ConfigurableProps<T = never> = {
+  components?: Array<Component>;
+  style?: ViewStyle;
+  overrides?: Overrides;
+  data?: T;
+}
+```
+
+---
+
+## 💡 Capabilities of Flash
+
+### ⚡ `FlashComponent`
+Renders any component or layout block directly from backend JSON.
+Works for both registered and baked components.
+
+---
+
+### ✅ Dynamic Styles & Props
+
+Customize any component at runtime via JSON.
+
+```json
+{
+  "name": "FlashText",
+  "data": { "text": "Welcome!" },
+  "styles": {
+    "style": { "fontSize": 16, "color": "#000" }
+  }
+}
+```
+
+---
+
+### 🧬 Component Overrides
+
+Modify pre-baked components using `overrides` + `nativeID`.
+
+```json
+"overrides": {
+  "button-title-id": {
+    "props": { "text": "Overridden" },
+    "styles": { "style": { "color": "#FF0000" } }
+  }
+}
+```
+
+---
+
+### 🔀 Layout Control
+
+Add, remove, or reorder child components dynamically using Inflaters.
+
+---
+
+### 🧱 Inflaters
+
+Render structured layouts defined in backend:
+
+| Inflater             | Use Case                      |
+|----------------------|-------------------------------|
+| `ScrollViewInflater` | Scrollable sections           |
+| `FlatListInflater`   | Lists, carousels, feed blocks |
+
+---
+
+## 🛠️ Making Components Flash-Compatible
+
+Flash-compatible components use `ConfigurableProps` and Flash base components (`FlashText`, `FlashView`, etc.) with `nativeID`.
+
+### ❌ Regular Component
+
+```tsx
+const FooterButton = ({ text, onPress }) => (
+  <Pressable onPress={onPress}>
+    <Text>{text}</Text>
+  </Pressable>
 )
 ```
-In this setup, sendSDUIEvent and sendSDUINonFatalEvent are custom event handlers that allow you to manage and log events specific to your application. The logLevel option configures the verbosity of the SDK's internal logging.
 
-## Registering Components
-Register your custom components with the SDK to enable dynamic rendering based on server configurations. This process ensures that the SDK can recognize and render the components defined in your application. The SDK also includes a set of built-in components, such as SDUIView and SDUIText, which can be utilized directly.
+---
 
-```bash
-import { SDUI } from 'react-native-server-driven-ui';
-import AppComponentList from './components/AppComponentList';
+### ✅ Flash-Compatible Component
 
-SDUI.registerComponent(AppComponentList);
-```
+```tsx
+import { FlashPressable, FlashText } from 'flash-client'
 
-By registering your components, you make them available for server-driven rendering, allowing the SDK to instantiate and display them as dictated by the server's configuration.
-
-## Setting Component Data
-
-Provide the SDK with the components' configuration data, which can be fetched from the server or defined locally. While the example below uses mock data (sduiMockData), you can replace this with data retrieved from your backend to dynamically control the UI based on server-defined configurations.
-```bash
-import { SDUI } from 'react-native-server-driven-ui';
-import sduiMockData from './sduiMockData';
-
-// Replace sduiMockData with your backend data
-SDUI.setComponentsData(sduiMockData);
-```
-By setting the components' data, you enable the SDK to render the UI dynamically based on the provided configurations, facilitating a server-driven approach to UI management.
-
-## Rendering Components
-Retrieve and render components within your application based on the registered components and the provided data. The SDK offers different inflaters to facilitate this process.
-
-**Using the FlatListInflater Component**
-
-For rendering lists of data, the SDK provides the FlatListInflater component, which integrates seamlessly with the server-driven configuration to display lists dynamically.
-
-```bash
-import React from 'react';
-import { FlatListInflater, SDUI } from 'react-native-server-driven-ui';
-import { flatListDefaultConfig } from './mock/FlatListDefaultConfig';
-import { ComponentName } from '../constants/AppConstants';
-
-const FlatListComponent = () => {
-  const flatListComponent = SDUI.getComponentLayout(
-    ComponentName.FLAT_LIST_COMPONENT,
-    flatListDefaultConfig
-  );
+const FooterButtonFlash = (props: ConfigurableProps) => {
+  const { data } = props
+  const testId = data?.testId
 
   return (
-    <FlatListInflater
-      components={flatListComponent.components}
-      data={flatListComponent.data}
-      overrides={flatListComponent.overrides}
-      style={flatListComponent.styles}
-    />
-  );
-};
-
-export default FlatListComponent;
+    <FlashPressable
+      nativeID={`${testId}-button-container`}
+      onPress={data?.onPress}
+      configProps={props}
+    >
+      <FlashText
+        nativeID={`${testId}-button-title`}
+        configProps={props}
+      >
+        {data?.text}
+      </FlashText>
+    </FlashPressable>
+  )
+}
 ```
-In this example, FlatListInflater renders a list based on the components and data provided. The flatListDefaultConfig serves as a fallback configuration if the server does not provide specific data for the flat list component. ComponentName.FLAT_LIST_COMPONENT identifies the specific component layout to retrieve from the SDK.
 
-By utilizing the FlatListInflater, you can efficiently render lists that adapt to server-driven configurations, enhancing the flexibility and responsiveness of your application.
+> ⚠️ `nativeID` is **mandatory** if you want to override props or styles dynamically
 
-**Using the ScrollViewInflater Component**
+---
 
-For rendering scrollable content, the SDK provides the ScrollViewInflater component, which allows for dynamic rendering of components within a scrollable view.
+## 🔁 Using Inflaters
 
-By utilizing the ScrollViewInflater, you can dynamically render scrollable content that adapts to server-driven configurations, enhancing the flexibility and responsiveness of your application.
+Inflaters decode backend layout structure and render dynamic children.
 
-## Contributing
-We welcome contributions to enhance the SDUI SDK. To contribute:
+### 🌀 ScrollViewInflater
 
-- Fork the repository.
-- Create a new branch: git checkout -b feature/YourFeatureName.
-- Make your changes and commit them: git commit -m 'Add some feature'.
-- Push to the branch: git push origin feature/YourFeatureName.
-- Submit a pull request.
-- Please ensure your code adheres to our coding standards and includes appropriate tests.
+```tsx
+<ScrollViewInflater
+  components={layout.components}
+  style={layout.styles}
+  scrollViewProps={{
+    showsVerticalScrollIndicator: false
+  }}
+/>
+```
 
-## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+---
+
+### 📋 FlatListInflater
+
+```tsx
+<FlatListInflater
+  components={layout.components}
+  data={layout.data}
+  style={layout.styles}
+  flatListProps={{ horizontal: true }}
+/>
+```
+
+> Can be used on screen-level or nested inside other components.
+
+---
+
+## 🧾 What is FlashComponent?
+
+`FlashComponent` is the **core dynamic renderer**. It:
+
+- Parses backend JSON
+- Finds the registered component by `name`
+- Injects `data`, `styles`, `overrides`, and `components`
+- Renders it with Flash render engine
+
+Even complex business components can be rendered — as long as they're Flash-Compatible.
+
+---
+
+## 🧰 Registering Components
+
+Before rendering, you must register Flash-compatible components.
+
+```tsx
+import { Flash } from 'flash-client'
+import { FooterButtonFlash, MatchCard } from './components'
+
+Flash.registerComponent({
+  FooterButtonFlash,
+  MatchCard
+})
+```
+
+---
+
+## 🔌 SDK Integration Guide
+
+### 1️⃣ Install
+
+```bash
+npm install flash-client
+# or
+yarn add flash-client
+```
+
+---
+
+### 2️⃣ Initialize Flash
+
+Call once in the app root:
+
+```tsx
+Flash.init(
+  {
+    sendFlashEvent: () => console.log('Flash event'),
+    sendFlashNonFatalEvent: (e) => console.warn('Flash non-fatal', e),
+  },
+  {
+    logLevel: 'info' // options: 'info', 'warn', 'error', 'none'
+  }
+)
+```
+
+---
+
+### 3️⃣ Set JSON Layout
+
+Load mock or real layout from backend:
+
+```tsx
+import flashMockData from './mock/flashMockData.json'
+
+Flash.setComponentsData(flashMockData)
+```
+
+---
+
+### 4️⃣ Render with Inflater
+
+```tsx
+const layout = Flash.getComponentLayout('FLAT_LIST_COMPONENT')
+
+return (
+  <FlatListInflater
+    components={layout.components}
+    data={layout.data}
+    style={layout.styles}
+    overrides={layout.overrides}
+  />
+)
+```
+
+---
+
+## 🎯 Example JSON
+
+```json
+{
+  "name": "FooterButtonFlash",
+  "data": {
+    "text": "Submit",
+    "onPress": "handleSubmit",
+    "testId": "submit"
+  },
+  "styles": {
+    "style": {
+      "backgroundColor": "#000"
+    }
+  },
+  "overrides": {
+    "submit-button-title": {
+      "styles": {
+        "style": {
+          "color": "#FFF"
+        }
+      }
+    }
+  }
+}
+```
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions!
+
+```bash
+# 1. Fork the repo
+# 2. Create a branch
+git checkout -b feature/your-feature
+
+# 3. Commit and push
+git commit -m "Add new feature"
+git push origin feature/your-feature
+
+# 4. Open a pull request 🎉
+```
+
+---
+
+## 📄 License
+
+Licensed under the [MIT License](./LICENSE)

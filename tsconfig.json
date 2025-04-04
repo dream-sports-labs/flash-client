@@ -2,7 +2,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "paths": {
-      "react-native-server-driven-ui": ["./src/index"]
+      "flash-client": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
