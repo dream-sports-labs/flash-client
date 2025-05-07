@@ -1,243 +1,21 @@
-# ⚡ Flash — Server-Driven UI for React Native
+# Flash Client
 
-**Flash** enables fully dynamic, server-controlled UIs in React Native using JSON-based configuration.
-It lets you change your app layout, styling, and behavior — without a new app release.
+[![npm version](https://badge.fury.io/js/flash-client.svg)](https://badge.fury.io/js/flash-client)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-> Push UI updates from backend ➡ Render them on app instantly using `FlashComponent` + Inflaters
+Flash Client is a powerful React Native Server Driven UI (SDUI) library that enables dynamic UI updates without app releases. It allows you to define, manage, and render UI components from server configurations while maintaining native performance.
 
----
+## Features
 
-## 📦 What is Flash?
+- 🚀 Server Driven UI Architecture
+- ⚡️ Dynamic Component Rendering
+- 🔄 Real-time UI Updates
+- 📱 Cross-Platform Support (iOS & Android)
+- 🎨 Customizable Component Registry
+- 🛠 Type-Safe Component Definitions
+- 📦 Easy Integration
 
-Flash is a Server-Driven UI (SDUI) framework that uses a **render engine + inflater system** to interpret backend JSON into real, functional UI in React Native.
-
-- Supports both simple and complex layouts
-- Enables styling and prop overrides on baked components
-- Works with dynamic lists, scroll views, tabs, etc.
-- Powers reusable, templatized, data-driven UI blocks
-
----
-
-## 📐 Specs: Core Flash Schema
-
-Every UI element is defined as a `Component` in JSON. Here are the key types:
-
-### `Component`
-
-```ts
-type Component = {
-  id?: number;
-  name: string;
-  components?: Array<Component>; // Children
-  styles?: Style;
-  overrides?: Overrides;
-  data?: PropData;
-  version?: string;
-  dataId?: string;
-}
-```
-
-### `Style`, `PropData`, `Overrides`
-
-```ts
-type Style = {
-  [key: string]: ViewStyle | TextStyle | ImageStyle;
-}
-
-type PropData = {
-  [key: string]: string | number | boolean | null | PropData | Array<PropData>;
-}
-
-type Overrides = {
-  [nativeId: string]: {
-    props?: PropData;
-    styles?: Style;
-  };
-}
-```
-
-### `ConfigurableProps<T>`
-
-Every Flash-compatible component must accept these props:
-
-```ts
-type ConfigurableProps<T = never> = {
-  components?: Array<Component>;
-  style?: ViewStyle;
-  overrides?: Overrides;
-  data?: T;
-}
-```
-
----
-
-## 💡 Capabilities of Flash
-
-### ⚡ `FlashComponent`
-Renders any component or layout block directly from backend JSON.
-Works for both registered and baked components.
-
----
-
-### ✅ Dynamic Styles & Props
-
-Customize any component at runtime via JSON.
-
-```json
-{
-  "name": "FlashText",
-  "data": { "text": "Welcome!" },
-  "styles": {
-    "style": { "fontSize": 16, "color": "#000" }
-  }
-}
-```
-
----
-
-### 🧬 Component Overrides
-
-Modify pre-baked components using `overrides` + `nativeID`.
-
-```json
-"overrides": {
-  "button-title-id": {
-    "props": { "text": "Overridden" },
-    "styles": { "style": { "color": "#FF0000" } }
-  }
-}
-```
-
----
-
-### 🔀 Layout Control
-
-Add, remove, or reorder child components dynamically using Inflaters.
-
----
-
-### 🧱 Inflaters
-
-Render structured layouts defined in backend:
-
-| Inflater             | Use Case                      |
-|----------------------|-------------------------------|
-| `ScrollViewInflater` | Scrollable sections           |
-| `FlatListInflater`   | Lists, carousels, feed blocks |
-
----
-
-## 🛠️ Making Components Flash-Compatible
-
-Flash-compatible components use `ConfigurableProps` and Flash base components (`FlashText`, `FlashView`, etc.) with `nativeID`.
-
-### ❌ Regular Component
-
-```tsx
-const FooterButton = ({ text, onPress }) => (
-  <Pressable onPress={onPress}>
-    <Text>{text}</Text>
-  </Pressable>
-)
-```
-
----
-
-### ✅ Flash-Compatible Component
-
-```tsx
-import { FlashPressable, FlashText } from 'flash-client'
-
-const FooterButtonFlash = (props: ConfigurableProps) => {
-  const { data } = props
-  const testId = data?.testId
-
-  return (
-    <FlashPressable
-      nativeID={`${testId}-button-container`}
-      onPress={data?.onPress}
-      configProps={props}
-    >
-      <FlashText
-        nativeID={`${testId}-button-title`}
-        configProps={props}
-      >
-        {data?.text}
-      </FlashText>
-    </FlashPressable>
-  )
-}
-```
-
-> ⚠️ `nativeID` is **mandatory** if you want to override props or styles dynamically
-
----
-
-## 🔁 Using Inflaters
-
-Inflaters decode backend layout structure and render dynamic children.
-
-### 🌀 ScrollViewInflater
-
-```tsx
-<ScrollViewInflater
-  components={layout.components}
-  style={layout.styles}
-  scrollViewProps={{
-    showsVerticalScrollIndicator: false
-  }}
-/>
-```
-
----
-
-### 📋 FlatListInflater
-
-```tsx
-<FlatListInflater
-  components={layout.components}
-  data={layout.data}
-  style={layout.styles}
-  flatListProps={{ horizontal: true }}
-/>
-```
-
-> Can be used on screen-level or nested inside other components.
-
----
-
-## 🧾 What is FlashComponent?
-
-`FlashComponent` is the **core dynamic renderer**. It:
-
-- Parses backend JSON
-- Finds the registered component by `name`
-- Injects `data`, `styles`, `overrides`, and `components`
-- Renders it with Flash render engine
-
-Even complex business components can be rendered — as long as they're Flash-Compatible.
-
----
-
-## 🧰 Registering Components
-
-Before rendering, you must register Flash-compatible components.
-
-```tsx
-import { Flash } from 'flash-client'
-import { FooterButtonFlash, MatchCard } from './components'
-
-Flash.registerComponent({
-  FooterButtonFlash,
-  MatchCard
-})
-```
-
----
-
-## 🔌 SDK Integration Guide
-
-### 1️⃣ Install
+## Installation
 
 ```bash
 npm install flash-client
@@ -245,102 +23,159 @@ npm install flash-client
 yarn add flash-client
 ```
 
----
+## Quick Start
 
-### 2️⃣ Initialize Flash
+1. Initialize Flash Client in your app:
 
-Call once in the app root:
+```typescript
+import { Flash } from 'flash-client';
 
-```tsx
-Flash.init(
+// Initialize with optional listeners and configuration
+Flash.init({
+  onError: (error) => console.error(error),
+  onComponentUpdate: (component) => console.log('Component updated:', component),
+});
+```
+
+2. Register Custom Components:
+
+```typescript
+import { Flash } from 'flash-client';
+import { MyCustomComponent } from './components';
+
+Flash.registerComponent({
+  'MyCustomComponent': MyCustomComponent,
+});
+```
+
+3. Set Component Data:
+
+```typescript
+Flash.setComponentsData([
   {
-    sendFlashEvent: () => console.log('Flash event'),
-    sendFlashNonFatalEvent: (e) => console.warn('Flash non-fatal', e),
+    id: 'header_1',
+    type: 'FlashView',
+    props: {
+      style: {
+        backgroundColor: '#fff',
+        padding: 16,
+      },
+    },
+    children: [
+      {
+        type: 'FlashText',
+        props: {
+          text: 'Welcome to Flash!',
+          style: {
+            fontSize: 24,
+            fontWeight: 'bold',
+          },
+        },
+      },
+    ],
   },
-  {
-    logLevel: 'info' // options: 'info', 'warn', 'error', 'none'
-  }
-)
+]);
 ```
 
----
+4. Render Components:
 
-### 3️⃣ Set JSON Layout
+```typescript
+import { Flash } from 'flash-client';
 
-Load mock or real layout from backend:
-
-```tsx
-import flashMockData from './mock/flashMockData.json'
-
-Flash.setComponentsData(flashMockData)
-```
-
----
-
-### 4️⃣ Render with Inflater
-
-```tsx
-const layout = Flash.getComponentLayout('FLAT_LIST_COMPONENT')
-
-return (
-  <FlatListInflater
-    components={layout.components}
-    data={layout.data}
-    style={layout.styles}
-    overrides={layout.overrides}
-  />
-)
-```
-
----
-
-## 🎯 Example JSON
-
-```json
-{
-  "name": "FooterButtonFlash",
-  "data": {
-    "text": "Submit",
-    "onPress": "handleSubmit",
-    "testId": "submit"
-  },
-  "styles": {
-    "style": {
-      "backgroundColor": "#000"
-    }
-  },
-  "overrides": {
-    "submit-button-title": {
-      "styles": {
-        "style": {
-          "color": "#FFF"
-        }
-      }
-    }
-  }
+function MyScreen() {
+  const component = Flash.getComponentLayout('header_1', DefaultComponent);
+  return component;
 }
 ```
 
----
+## Core Concepts
 
-## 🤝 Contributing
+### Component Structure
 
-We welcome contributions!
+Components in Flash Client follow a specific structure:
 
-```bash
-# 1. Fork the repo
-# 2. Create a branch
-git checkout -b feature/your-feature
-
-# 3. Commit and push
-git commit -m "Add new feature"
-git push origin feature/your-feature
-
-# 4. Open a pull request 🎉
+```typescript
+interface Component {
+  id: string;
+  type: string;
+  props?: ConfigurableProps;
+  children?: Component[];
+}
 ```
 
----
+### Built-in Components
 
-## 📄 License
+Flash Client comes with several pre-built components:
 
-Licensed under the [MIT License](./LICENSE)
+- `FlashView`: A basic container component
+- `FlashText`: Text rendering component
+- `FlashImage`: Image rendering component
+- `ScrollInflater`: Scrollable container
+- `FlatListInflater`: List rendering component
+
+### Configuration Options
+
+When initializing Flash Client, you can provide various configuration options:
+
+```typescript
+Flash.init({
+  // Event Listeners
+  onError: (error) => {},
+  onComponentUpdate: (component) => {},
+  
+  // Configuration Options
+  cacheEnabled: true,
+  defaultTransition: 'fade',
+  // ... other options
+});
+```
+
+## Advanced Usage
+
+### Custom Component Registration
+
+```typescript
+interface CustomComponentProps {
+  title: string;
+  onPress: () => void;
+}
+
+const CustomButton: React.FC<CustomComponentProps> = (props) => {
+  // Component implementation
+};
+
+Flash.registerComponent({
+  'CustomButton': CustomButton,
+});
+```
+
+### Dynamic Updates
+
+Flash Client supports real-time UI updates by updating component data:
+
+```typescript
+Flash.setComponentsData([
+  // Updated component definitions
+]);
+```
+
+## TypeScript Support
+
+Flash Client is written in TypeScript and provides full type definitions out of the box.
+
+## Contributing
+
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Support
+
+- [GitHub Issues](https://github.com/anirudhdream11/flash-client/issues)
+- [Documentation](https://github.com/anirudhdream11/flash-client#readme)
+
+## Credits
+
+Created and maintained by [anirudhdream11](https://github.com/anirudhdream11)
