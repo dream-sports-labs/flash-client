@@ -17,12 +17,12 @@ Flash Client is a powerful React Native Server Driven UI (SDUI) library that ena
 
 ## 📚 Documentation
 
-- [Overview](https://app.gitbook.com/o/4LSU9ku5mbRRmXIp618W/s/x2629G9neeISCbDa2iUD/development/overview)
-- [Understanding Configurability](https://app.gitbook.com/o/4LSU9ku5mbRRmXIp618W/s/x2629G9neeISCbDa2iUD/understanding-configurability)
-- [Getting Started](https://app.gitbook.com/o/4LSU9ku5mbRRmXIp618W/s/x2629G9neeISCbDa2iUD/getting-started)
-- [Components](https://app.gitbook.com/o/4LSU9ku5mbRRmXIp618W/s/x2629G9neeISCbDa2iUD/getting-started/components)
-- [Inflaters](https://app.gitbook.com/o/4LSU9ku5mbRRmXIp618W/s/x2629G9neeISCbDa2iUD/getting-started/inflaters)
-- [Overrides](https://app.gitbook.com/o/4LSU9ku5mbRRmXIp618W/s/x2629G9neeISCbDa2iUD/getting-started/overrides)
+- [Overview](https://docs.d11platform.com/flash-client-sdk)
+- [Understanding Configurability](https://docs.d11platform.com/flash-client-sdk/understanding-configurability)
+- [Getting Started](https://docs.d11platform.com/flash-client-sdk/getting-started)
+- [Components](https://docs.d11platform.com/flash-client-sdk/getting-started/components)
+- [Inflaters](https://docs.d11platform.com/flash-client-sdk/getting-started/inflaters)
+- [Overrides](https://docs.d11platform.com/flash-client-sdk/getting-started/overrides)
 
 
 ## Installation
