@@ -30,14 +30,14 @@ Flash Client is a powerful React Native Server Driven UI (SDUI) library that ena
 ```bash
 npm install flash-client
 ```
-# or
+### or
 ```typescript
 yarn add flash-client
 ```
 
 ## Quick Start
 
-1. Initialize Flash Client in your app:
+#### 1. Initialize Flash Client in your app:
 
 ```typescript
 import { Flash } from 'flash-client';
@@ -49,7 +49,7 @@ Flash.init({
 });
 ```
 
-2. Register Custom Components:
+#### 2. Register Custom Components:
 
 ```typescript
 import { Flash } from 'flash-client';
@@ -60,7 +60,7 @@ Flash.registerComponent({
 });
 ```
 
-3. Set Component Data:
+#### 3. Set Component Data:
 
 ```typescript
 Flash.setComponentsData([
@@ -89,9 +89,9 @@ Flash.setComponentsData([
 ]);
 ```
 
-4. Render Components:
+#### 4. Render Components:
 
-   - Rendering Lists with Inflater on Screen
+   ##### - Rendering Lists with Inflater on Screen
 ```typescript
 import { Flash, FlatListInflater } from 'flash-client';
 
@@ -112,7 +112,7 @@ function MatchListScreen() {
 );
 }
 ```
-  - Fully Dynamic Rendering with FlashComponent
+  ##### - Fully Dynamic Rendering with FlashComponent
 ```typescript
 import { FlashComponent } from 'flash-client';
 
@@ -154,28 +154,29 @@ Flash Client comes with several pre-built components:
 - `ScrollInflater`: Scrollable container
 - `FlatListInflater`: List rendering component
 
-## Advanced Usage
-
-### Custom Component Registration
-
-```typescript
-interface CustomComponentProps {
-  title: string;
-  onPress: () => void;
-}
-
-const CustomButton: React.FC<CustomComponentProps> = (props) => {
-  // Component implementation
-};
-
-Flash.registerComponent({
-  'CustomButton': CustomButton,
-});
-```
-
 ## TypeScript Support
 
 Flash Client is written in TypeScript and provides full type definitions out of the box.
+
+## Roadmap
+
+## Flash is Evolving Fast!
+
+We’re actively working on powerful new features to make Flash even more dynamic and flexible:
+
+- 🧩 **Events & Actions System** — Trigger behaviors like navigation, deep links, and alerts directly from backend-defined JSON
+- 🌐 **Remote Components** — Render components dynamically using **pre-transpiled JSX**, enabling lightweight feature delivery without bundling into the app
+- 🧱 **Enhanced Component Library** — A richer set of reusable, Flash-compatible UI components out of the box
+
+## Community Discord
+
+Join the [DreamSportsLabs Community](https://discord.com/channels/1317172052179943504/1317172052179943507) to chat about marco or other DreamSportsLabs libraries.
+
+## Created by DreamSportsLabs
+
+<img src="media/logo.png" width="40" alt="Marco banner" />
+
+DreamSportsLabs is committed to building open-source tools that empower developers and businesses. Learn more about us at our website.
 
 ## Contributing
 
