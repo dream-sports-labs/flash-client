@@ -136,11 +136,13 @@ function DynamicBlock({ layout }) {
 Components in Flash Client follow a specific structure:
 
 ```typescript
-interface Component {
-  id: string;
-  type: string;
-  props?: ConfigurableProps;
-  children?: Component[];
+Component = {
+  name: string;
+  components?: Array<Component>; // Nested children
+  styles?: Style;
+  overrides?: Overrides;
+  data?: PropData;
+  dataId?: string;
 }
 ```
 
@@ -158,9 +160,7 @@ Flash Client comes with several pre-built components:
 
 Flash Client is written in TypeScript and provides full type definitions out of the box.
 
-## Roadmap
-
-## Flash is Evolving Fast!
+## ⚡ Flash is Evolving Fast!
 
 We’re actively working on powerful new features to make Flash even more dynamic and flexible:
 
