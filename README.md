@@ -189,4 +189,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Support
 
 - [GitHub Issues](https://github.com/dream-sports-labs/flash-client/issues)
-- [Documentation](https://app.gitbook.com/o/4LSU9ku5mbRRmXIp618W/s/x2629G9neeISCbDa2iUD/development/overview)
+- [Documentation](https://docs.d11platform.com/flash-client-sdk)
