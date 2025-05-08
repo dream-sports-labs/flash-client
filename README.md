@@ -1,4 +1,4 @@
-# Flash Client
+# ⚡ Flash Client
 
 [![npm version](https://badge.fury.io/js/flash-client.svg)](https://badge.fury.io/js/flash-client)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
