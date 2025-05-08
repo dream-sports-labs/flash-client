@@ -15,6 +15,16 @@ Flash Client is a powerful React Native Server Driven UI (SDUI) library that ena
 - 🛠 Type-Safe Component Definitions
 - 📦 Easy Integration
 
+## 📚 Documentation
+
+- [Overview](https://app.gitbook.com/o/4LSU9ku5mbRRmXIp618W/s/x2629G9neeISCbDa2iUD/development/overview)
+- [Understanding Configurability](https://app.gitbook.com/o/4LSU9ku5mbRRmXIp618W/s/x2629G9neeISCbDa2iUD/understanding-configurability)
+- [Getting Started](https://app.gitbook.com/o/4LSU9ku5mbRRmXIp618W/s/x2629G9neeISCbDa2iUD/getting-started)
+- [Components](https://app.gitbook.com/o/4LSU9ku5mbRRmXIp618W/s/x2629G9neeISCbDa2iUD/getting-started/components)
+- [Inflaters](https://app.gitbook.com/o/4LSU9ku5mbRRmXIp618W/s/x2629G9neeISCbDa2iUD/getting-started/inflaters)
+- [Overrides](https://app.gitbook.com/o/4LSU9ku5mbRRmXIp618W/s/x2629G9neeISCbDa2iUD/getting-started/overrides)
+
+
 ## Installation
 
 ```bash
@@ -79,12 +89,41 @@ Flash.setComponentsData([
 
 4. Render Components:
 
+  - Rendering Lists with Inflater on Screen
 ```typescript
-import { Flash } from 'flash-client';
+import { Flash, FlatListInflater } from 'flash-client';
 
-function MyScreen() {
-  const component = Flash.getComponentLayout('header_1', DefaultComponent);
-  return component;
+function MatchListScreen() {
+  const listLayout = Flash.getComponentLayout('match_list');
+
+  return (
+    <FlatListInflater
+      components={listLayout.components}
+  data={listLayout.data}
+  style={listLayout.styles}
+  overrides={listLayout.overrides}
+  flatListProps={{
+      keyExtractor: (item, index) => `match-${index}`,
+      showsHorizontalScrollIndicator: false,
+  }}
+  />
+);
+}
+```
+ - Fully Dynamic Rendering with FlashComponent
+```typescript
+import { FlashComponent } from 'flash-client';
+
+function DynamicBlock({ layout }) {
+  return (
+    <FlashComponent
+      name={layout.name}
+      data={layout.data}
+      components={layout.components}
+      styles={layout.styles}
+      overrides={layout.overrides}
+    />
+  );
 }
 ```
 
@@ -113,23 +152,6 @@ Flash Client comes with several pre-built components:
 - `ScrollInflater`: Scrollable container
 - `FlatListInflater`: List rendering component
 
-### Configuration Options
-
-When initializing Flash Client, you can provide various configuration options:
-
-```typescript
-Flash.init({
-  // Event Listeners
-  onError: (error) => {},
-  onComponentUpdate: (component) => {},
-  
-  // Configuration Options
-  cacheEnabled: true,
-  defaultTransition: 'fade',
-  // ... other options
-});
-```
-
 ## Advanced Usage
 
 ### Custom Component Registration
@@ -149,16 +171,6 @@ Flash.registerComponent({
 });
 ```
 
-### Dynamic Updates
-
-Flash Client supports real-time UI updates by updating component data:
-
-```typescript
-Flash.setComponentsData([
-  // Updated component definitions
-]);
-```
-
 ## TypeScript Support
 
 Flash Client is written in TypeScript and provides full type definitions out of the box.
@@ -174,8 +186,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Support
 
 - [GitHub Issues](https://github.com/anirudhdream11/flash-client/issues)
-- [Documentation](https://github.com/anirudhdream11/flash-client#readme)
-
-## Credits
-
-Created and maintained by [anirudhdream11](https://github.com/anirudhdream11)
+- [Documentation](https://app.gitbook.com/o/4LSU9ku5mbRRmXIp618W/s/x2629G9neeISCbDa2iUD/development/overview)
