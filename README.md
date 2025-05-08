@@ -29,7 +29,9 @@ Flash Client is a powerful React Native Server Driven UI (SDUI) library that ena
 
 ```bash
 npm install flash-client
+```
 # or
+```typescript
 yarn add flash-client
 ```
 
@@ -89,7 +91,7 @@ Flash.setComponentsData([
 
 4. Render Components:
 
-  - Rendering Lists with Inflater on Screen
+   - Rendering Lists with Inflater on Screen
 ```typescript
 import { Flash, FlatListInflater } from 'flash-client';
 
@@ -110,7 +112,7 @@ function MatchListScreen() {
 );
 }
 ```
- - Fully Dynamic Rendering with FlashComponent
+  - Fully Dynamic Rendering with FlashComponent
 ```typescript
 import { FlashComponent } from 'flash-client';
 
@@ -185,5 +187,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Support
 
-- [GitHub Issues](https://github.com/anirudhdream11/flash-client/issues)
+- [GitHub Issues](https://github.com/dream-sports-labs/flash-client/issues)
 - [Documentation](https://app.gitbook.com/o/4LSU9ku5mbRRmXIp618W/s/x2629G9neeISCbDa2iUD/development/overview)
