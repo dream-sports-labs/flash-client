@@ -7,7 +7,6 @@ Flash Client is a powerful React Native Server Driven UI (SDUI) library that ena
 
 ## Features
 
-- 🚀 Server Driven UI Architecture
 - ⚡️ Dynamic Component Rendering
 - 🔄 Real-time UI Updates
 - 📱 Cross-Platform Support (iOS & Android)
@@ -22,7 +21,6 @@ Flash Client is a powerful React Native Server Driven UI (SDUI) library that ena
 - [Getting Started](https://docs.d11platform.com/flash-client-sdk/getting-started)
 - [Components](https://docs.d11platform.com/flash-client-sdk/getting-started/components)
 - [Inflaters](https://docs.d11platform.com/flash-client-sdk/getting-started/inflaters)
-- [Overrides](https://docs.d11platform.com/flash-client-sdk/getting-started/overrides)
 
 
 ## Installation
