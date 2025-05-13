@@ -1,7 +1,7 @@
 {
-  "name": "flash-client",
-  "version": "0.1.0",
-  "description": "React Native Server Driven UI",
+  "name": "@d11/flash-client",
+  "version": "0.0.1",
+  "description": "Flash Client - React Native Server Driven UI library",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
   "module": "./lib/module/index.js",
@@ -48,7 +48,11 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "sdui",
+    "server-driven-ui",
+    "rn-sdui",
+    "flash-client"
   ],
   "repository": {
     "type": "git",
@@ -61,7 +65,9 @@
   },
   "homepage": "https://github.com/anirudhdream11/flash-client#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "restricted",
+    "private": true
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^17.0.2",
