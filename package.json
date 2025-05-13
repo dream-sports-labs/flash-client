@@ -1,6 +1,6 @@
 {
   "name": "@d11/flash-client",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Flash Client - React Native Server Driven UI library",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
