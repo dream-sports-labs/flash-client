@@ -75,7 +75,7 @@
     "@react-native-community/cli": "15.0.1",
     "@react-native/babel-preset": "^0.77.0",
     "@react-native/eslint-config": "^0.73.1",
-    "@release-it/conventional-changelog": "^9.0.2",
+    "@release-it/conventional-changelog": "^10.0.1",
     "@testing-library/jest-native": "^5.4.3",
     "@testing-library/react-native": "^13.0.1",
     "@types/jest": "^29.5.5",
@@ -128,7 +128,7 @@
     },
     "plugins": {
       "@release-it/conventional-changelog": {
-        "preset": "conventional-changelog-angular"
+        "preset": "angular"
       }
     }
   },
