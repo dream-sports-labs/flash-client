@@ -59,3 +59,5 @@ export * from './flash-components/base-components/FlashText'
 export * from './flash-components/base-components/FlashView'
 export * from './flash-components/base-components/FlashImage'
 export * from './core/FlashConfig'
+
+export const x = 10
