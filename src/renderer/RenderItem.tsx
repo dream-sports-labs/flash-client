@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import { type FlashComponentConfigurableProps } from '../types/types'
+import { type FlashComponentConfigurableProps } from 'flash-client'
 import { getComponent } from '../utils/render-utils'
 
 export const RenderItem = memo((props: FlashComponentConfigurableProps) => {
