@@ -1,4 +1,4 @@
-import React, { type ReactNode } from 'react'
+import { type ReactNode } from 'react'
 
 import { Text, type TextProps } from 'react-native'
 
@@ -35,8 +35,7 @@ export const FlashText = <T,>(
   props: Omit<TextProps, 'nativeID'> & {
     nativeID: string
     configProps: ConfigurableProps<T>
-  },
-  ref: React.ForwardedRef<Text>
+  }
 ) => {
   const { configProps, children, ...rest } = props
   const { styles, overrides, data } = configProps
@@ -69,7 +68,6 @@ export const FlashText = <T,>(
       {...rest} // Spread the rest of the props, including nativeID
       {...remainingFlashProps} // Spread additional props retrieved from getFlashProps, excluding `text`
       {...data} // Spread any additional props from data
-      ref={ref} // Forward ref
       style={combinedStyles} // Apply the combined styles
       children={contentToRender}
     />
