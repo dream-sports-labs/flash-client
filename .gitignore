@@ -28,8 +28,6 @@ DerivedData
 *.ipa
 *.xcuserstate
 project.xcworkspace
-.npmrc
-
 # Android/IJ
 #
 .classpath
