@@ -26,11 +26,11 @@ Flash Client is a powerful React Native Server Driven UI (SDUI) library that ena
 ## Installation
 
 ```bash
-npm install flash-client
+npm install @d11/flash-client
 ```
 ### or
 ```typescript
-yarn add flash-client
+yarn add @d11/flash-client
 ```
 
 ## Quick Start
