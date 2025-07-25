@@ -4,7 +4,7 @@
   "description": "React Native Server Driven UI",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
-  "types": "./lib/typescript/src/index.d.ts",
+  "types": "./lib/typescript/commonjs/src/index.d.ts",
   "module": "./lib/module/index.js",
   "exports": {
     ".": {
