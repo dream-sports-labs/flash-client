@@ -1848,6 +1848,45 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@d11/flash-client@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@d11/flash-client@workspace:."
+  dependencies:
+    "@commitlint/config-conventional": ^17.0.2
+    "@evilmartians/lefthook": ^1.5.0
+    "@react-native-community/cli": 15.0.1
+    "@react-native/babel-preset": ^0.77.0
+    "@react-native/eslint-config": ^0.73.1
+    "@release-it/conventional-changelog": ^10.0.1
+    "@testing-library/jest-native": ^5.4.3
+    "@testing-library/react-native": ^13.0.1
+    "@types/jest": ^29.5.5
+    "@types/react": ^18.2.44
+    "@types/react-test-renderer": 18.3.1
+    babel-jest: ^29.7.0
+    commitlint: ^17.0.2
+    conventional-changelog-angular: ^8.0.0
+    del-cli: ^5.1.0
+    eslint: ^8.51.0
+    eslint-config-prettier: ^9.0.0
+    eslint-plugin-prettier: ^5.0.1
+    jest: ^29.7.0
+    jest-environment-jsdom: ^29.7.0
+    metro-react-native-babel-preset: ^0.77.0
+    prettier: ^3.0.3
+    react: 18.3.1
+    react-native: 0.77.0
+    react-native-builder-bob: ^0.32.0
+    react-test-renderer: 18.3.1
+    release-it: ^17.10.0
+    turbo: ^1.10.7
+    typescript: ^5.2.2
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  languageName: unknown
+  linkType: soft
+
 "@eslint-community/eslint-utils@npm:^4.2.0":
   version: 4.5.1
   resolution: "@eslint-community/eslint-utils@npm:4.5.1"
@@ -3118,9 +3157,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@release-it/conventional-changelog@npm:^9.0.2":
-  version: 9.0.4
-  resolution: "@release-it/conventional-changelog@npm:9.0.4"
+"@release-it/conventional-changelog@npm:^10.0.1":
+  version: 10.0.1
+  resolution: "@release-it/conventional-changelog@npm:10.0.1"
   dependencies:
     concat-stream: ^2.0.0
     conventional-changelog: ^6.0.0
@@ -3128,8 +3167,8 @@ __metadata:
     git-semver-tags: ^8.0.0
     semver: ^7.6.3
   peerDependencies:
-    release-it: ^17.0.0
-  checksum: fbe17cc1d83abd616fa1b02b3c52d964ba6bdc7e5d91984f5bd1aebcdde390b9d7d0e8e3d916dce64f658058429f65a92196d1c978018bb35973e15419272e65
+    release-it: ^18.0.0 || ^19.0.0
+  checksum: 9b8a90b3ceaee172cdfb0de248af62182d78966fe43b7d965566513423b5e96e1f1a95849e3a5b2cfc6d06d19ffc64b580aabdfbbbe50e8e491593cd03033016
   languageName: node
   linkType: hard
 
@@ -6554,44 +6593,6 @@ __metadata:
     react-native-builder-bob: ^0.32.0
     react-native-safe-area-context: 5.3.0
     react-native-screens: ^4.6.0
-  languageName: unknown
-  linkType: soft
-
-"flash-client@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "flash-client@workspace:."
-  dependencies:
-    "@commitlint/config-conventional": ^17.0.2
-    "@evilmartians/lefthook": ^1.5.0
-    "@react-native-community/cli": 15.0.1
-    "@react-native/babel-preset": ^0.77.0
-    "@react-native/eslint-config": ^0.73.1
-    "@release-it/conventional-changelog": ^9.0.2
-    "@testing-library/jest-native": ^5.4.3
-    "@testing-library/react-native": ^13.0.1
-    "@types/jest": ^29.5.5
-    "@types/react": ^18.2.44
-    "@types/react-test-renderer": 18.3.1
-    babel-jest: ^29.7.0
-    commitlint: ^17.0.2
-    del-cli: ^5.1.0
-    eslint: ^8.51.0
-    eslint-config-prettier: ^9.0.0
-    eslint-plugin-prettier: ^5.0.1
-    jest: ^29.7.0
-    jest-environment-jsdom: ^29.7.0
-    metro-react-native-babel-preset: ^0.77.0
-    prettier: ^3.0.3
-    react: 18.3.1
-    react-native: 0.77.0
-    react-native-builder-bob: ^0.32.0
-    react-test-renderer: 18.3.1
-    release-it: ^17.10.0
-    turbo: ^1.10.7
-    typescript: ^5.2.2
-  peerDependencies:
-    react: "*"
-    react-native: "*"
   languageName: unknown
   linkType: soft
 

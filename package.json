@@ -1,7 +1,7 @@
 {
-  "name": "flash-client",
+  "name": "@d11/flash-client",
   "version": "0.1.0",
-  "description": "React Native Server Driven UI",
+  "description": "Flash Client - React Native Server Driven UI library",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
   "module": "./lib/module/index.js",
@@ -48,7 +48,11 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "sdui",
+    "server-driven-ui",
+    "rn-sdui",
+    "flash-client"
   ],
   "repository": {
     "type": "git",
@@ -61,7 +65,9 @@
   },
   "homepage": "https://github.com/anirudhdream11/flash-client#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "restricted",
+    "private": true
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^17.0.2",
@@ -69,7 +75,7 @@
     "@react-native-community/cli": "15.0.1",
     "@react-native/babel-preset": "^0.77.0",
     "@react-native/eslint-config": "^0.73.1",
-    "@release-it/conventional-changelog": "^9.0.2",
+    "@release-it/conventional-changelog": "^10.0.1",
     "@testing-library/jest-native": "^5.4.3",
     "@testing-library/react-native": "^13.0.1",
     "@types/jest": "^29.5.5",
@@ -77,6 +83,7 @@
     "@types/react-test-renderer": "18.3.1",
     "babel-jest": "^29.7.0",
     "commitlint": "^17.0.2",
+    "conventional-changelog-angular": "^8.0.0",
     "del-cli": "^5.1.0",
     "eslint": "^8.51.0",
     "eslint-config-prettier": "^9.0.0",
