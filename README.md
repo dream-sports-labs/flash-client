@@ -38,7 +38,7 @@ yarn add @d11/flash-client
 #### 1. Initialize Flash Client in your app:
 
 ```typescript
-import { Flash } from 'flash-client';
+import { Flash } from '@d11/flash-client';
 
 // Initialize with optional listeners and configuration
 Flash.init({
@@ -50,7 +50,7 @@ Flash.init({
 #### 2. Register Custom Components:
 
 ```typescript
-import { Flash } from 'flash-client';
+import { Flash } from '@d11/flash-client';
 import { MyCustomComponent } from './components';
 
 Flash.registerComponent({
@@ -91,7 +91,7 @@ Flash.setComponentsData([
 
    ##### - Rendering Lists with Inflater on Screen
 ```typescript
-import { Flash, FlatListInflater } from 'flash-client';
+import { Flash, FlatListInflater } from '@d11/flash-client';
 
 function MatchListScreen() {
   const listLayout = Flash.getComponentLayout('match_list');
@@ -112,7 +112,7 @@ function MatchListScreen() {
 ```
   ##### - Fully Dynamic Rendering with FlashComponent
 ```typescript
-import { FlashComponent } from 'flash-client';
+import { FlashComponent } from '@d11/flash-client';
 
 function DynamicBlock({ layout }) {
   return (

@@ -1,4 +1,4 @@
-import { type Component } from 'flash-client'
+import { type Component } from '@d11/flash-client'
 
 export const listComponentDefaultConfig: Component = {
   id: 2,

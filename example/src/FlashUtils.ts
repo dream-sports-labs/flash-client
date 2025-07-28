@@ -1,5 +1,5 @@
 import { type IFlashOptions } from '../../src/core/interfaces/IFlashOptions'
-import { Flash } from 'flash-client'
+import { Flash } from '@d11/flash-client'
 import { flashMockData } from './mocks/MockData'
 import { AppComponentList } from './component-registry/ComponentRegistry'
 

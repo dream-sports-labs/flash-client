@@ -1,6 +1,11 @@
+import {
+  FlashImage,
+  FlashText,
+  FlashView,
+  type ConfigurableProps,
+  type PropData,
+} from '@d11/flash-client'
 import React, { memo } from 'react'
-import { type ConfigurableProps, type PropData, FlashImage } from 'flash-client'
-import { FlashView, FlashText } from 'flash-client'
 
 interface CardDataProps extends PropData {
   cardTitle: string
