@@ -1848,7 +1848,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@d11/flash-client@^0.1.1, @d11/flash-client@workspace:.":
+"@d11/flash-client@*, @d11/flash-client@^0.1.1, @d11/flash-client@workspace:.":
   version: 0.0.0-use.local
   resolution: "@d11/flash-client@workspace:."
   dependencies:
@@ -6580,6 +6580,7 @@ __metadata:
     "@babel/core": ^7.25.2
     "@babel/preset-env": ^7.25.3
     "@babel/runtime": ^7.25.0
+    "@d11/flash-client": "*"
     "@react-native-community/cli": 15.0.1
     "@react-native-community/cli-platform-android": 15.0.1
     "@react-native-community/cli-platform-ios": 15.0.1

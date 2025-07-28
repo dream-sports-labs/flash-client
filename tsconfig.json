@@ -2,7 +2,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "paths": {
-      "flash-client": ["./src/index"]
+      "@d11/flash-client": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
