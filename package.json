@@ -8,34 +8,29 @@
   "module": "./lib/module/index.js",
   "exports": {
     ".": {
-      "import": {
-        "types": "./lib/typescript/module/src/index.d.ts",
-        "default": "./lib/module/index.js"
-      },
-      "require": {
-        "types": "./lib/typescript/commonjs/src/index.d.ts",
-        "default": "./lib/commonjs/index.js"
-      }
+      "types": "./lib/typescript/module/src/index.d.ts",
+      "default": "./lib/module/index.js"
     }
   },
   "files": [
-    "src",
     "lib",
     "android",
     "ios",
-    "cpp",
     "*.podspec",
     "react-native.config.js",
+    "!lib/**/__tests__",
+    "!lib/**/*.test.*",
+    "!lib/**/*.spec.*",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__",
+    "!**/.*",
     "!ios/build",
     "!android/build",
     "!android/gradle",
     "!android/gradlew",
     "!android/gradlew.bat",
-    "!android/local.properties",
-    "!**/__tests__",
-    "!**/__fixtures__",
-    "!**/__mocks__",
-    "!**/.*"
+    "!android/local.properties"
   ],
   "scripts": {
     "example": "yarn workspace flash-client-example",
@@ -78,7 +73,6 @@
     "@types/react-test-renderer": "18.3.1",
     "babel-jest": "^29.7.0",
     "commitlint": "^17.0.2",
-    "conventional-changelog-angular": "^8.0.0",
     "del-cli": "^5.1.0",
     "eslint": "^8.51.0",
     "eslint-config-prettier": "^9.0.0",
@@ -165,7 +159,6 @@
     "source": "src",
     "output": "lib",
     "targets": [
-      "codegen",
       [
         "commonjs",
         {
@@ -202,5 +195,8 @@
     "type": "turbo-module",
     "languages": "kotlin-objc",
     "version": "0.45.5"
+  },
+  "dependencies": {
+    "@d11/flash-client": "^0.1.1"
   }
 }

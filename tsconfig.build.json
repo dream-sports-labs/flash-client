@@ -1,4 +1,19 @@
 {
   "extends": "./tsconfig",
-  "exclude": ["example", "lib"]
+  "compilerOptions": {
+    "declaration": true,
+    "removeComments": true,
+    "importsNotUsedAsValues": "remove",
+    "preserveValueImports": false,
+    "stripInternal": true
+  },
+  "exclude": [
+    "example",
+    "lib",
+    "**/__tests__",
+    "**/*.test.*",
+    "**/*.spec.*",
+    "**/__mocks__",
+    "jest"
+  ]
 }

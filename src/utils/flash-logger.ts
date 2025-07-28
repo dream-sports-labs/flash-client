@@ -2,13 +2,13 @@ import { FlashConfig } from '../core/FlashConfig'
 
 export class FlashLogger {
   static log(message: string, details?: object) {
-    if (FlashConfig.shouldLog('info')) {
+    if (__DEV__ && FlashConfig.shouldLog('info')) {
       console.log(`[Flash] ${message}`, details || '')
     }
   }
 
   static warn(message: string, details?: object) {
-    if (FlashConfig.shouldLog('warn')) {
+    if (__DEV__ && FlashConfig.shouldLog('warn')) {
       console.warn(`[Flash Warning] ${message}`, details || '')
     }
   }
