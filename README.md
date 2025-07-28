@@ -168,7 +168,7 @@ We’re actively working on powerful new features to make Flash even more dynami
 
 ## Community Discord
 
-Join the [DreamSportsLabs Community](https://discord.com/channels/1317172052179943504/1317172052179943507) to chat about marco or other DreamSportsLabs libraries.
+Join the [DreamSportsLabs Community](https://discord.com/channels/1317172052179943504/1317172052179943507) to chat about flash-client or other DreamSportsLabs libraries.
 
 ## Created by DreamSportsLabs
 
