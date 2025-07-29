@@ -1,6 +1,6 @@
 import { Image, type ImageProps } from 'react-native'
 import { getFlashProps, getFlashStyles } from '../../utils/style-utils'
-import { type ConfigurableProps } from 'flash-client'
+import type { ConfigurableProps } from '../../types/types'
 
 type FlashImageProps<T> = ImageProps & {
   nativeID: string

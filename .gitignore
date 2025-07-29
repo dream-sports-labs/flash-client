@@ -28,7 +28,6 @@ DerivedData
 *.ipa
 *.xcuserstate
 project.xcworkspace
-
 # Android/IJ
 #
 .classpath
@@ -82,3 +81,5 @@ ios/generated
 android/generated
 
 example/ios/.xcode.env.local
+
+.npmrc
